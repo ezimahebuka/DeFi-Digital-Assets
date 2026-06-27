@@ -1,0 +1,724 @@
+/* Global page styling */
+.LandingPage {
+  min-height: 100vh;
+  background: linear-gradient(180deg, #0f1217 0%, #14161b 100%);
+  color: var(--text-primary);
+  overflow-x: hidden;
+}
+
+.LandingHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.5rem 0;
+}
+
+.LandingBrand {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.2rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.LandingBrand small {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 400;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+}
+
+.LandingNav {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.LandingNav a,
+.LandingNav button {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  background: none;
+  border: none;
+  cursor: pointer;
+  position: relative;
+}
+
+.LandingNav a:hover,
+.LandingNav button:hover {
+  color: var(--text-primary);
+}
+
+.LandingNavDropdown {
+  position: relative;
+}
+
+.LandingNavDropdown button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.LandingDropdownMenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 220px;
+  background: rgba(15, 18, 23, 0.98);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 14px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+  padding: 1rem;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: all 0.2s ease;
+  z-index: 10;
+}
+
+.LandingNavDropdown:hover .LandingDropdownMenu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.LandingDropdownMenu a {
+  display: block;
+  padding: 0.75rem 1rem;
+  border-radius: 12px;
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+.LandingDropdownMenu a:hover {
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--text-primary);
+}
+
+.LandingHeaderActions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.LandingHeaderButton {
+  padding: 0.85rem 1.5rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  color: var(--text-primary);
+  text-decoration: none;
+  background: rgba(255, 255, 255, 0.06);
+  transition: all 0.25s ease;
+}
+
+.LandingHeaderButton.primary {
+  background: rgba(255, 255, 255, 0.14);
+}
+
+.LandingHeaderButton:hover {
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.LandingHero {
+  padding: 5rem 0 3rem;
+}
+
+.LandingHeroContent {
+  display: grid;
+  grid-template-columns: 1.3fr 0.9fr;
+  gap: 2rem;
+  align-items: center;
+}
+
+.LandingHeroCopy {
+  max-width: 640px;
+}
+
+.LandingBadge {
+  display: inline-block;
+  margin-bottom: 1.5rem;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  padding: 0.75rem 1.25rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+}
+
+.LandingHeroCopy h1 {
+  font-size: clamp(2.75rem, 5vw, 4.5rem);
+  line-height: 1.05;
+  margin-bottom: 1.5rem;
+}
+
+.LandingHeroCopy p {
+  max-width: 520px;
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+}
+
+.LandingActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.LandingButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 2rem;
+  border-radius: 999px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  min-width: 160px;
+  transition: all 0.25s ease;
+  text-decoration: none;
+}
+
+.LandingButton.primary {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: var(--text-primary);
+}
+
+.LandingButton.secondary {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: var(--text-primary);
+}
+
+.LandingButton.outline {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  color: var(--text-primary);
+}
+
+.LandingButton:hover {
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.LandingHeroStats {
+  display: grid;
+  gap: 1rem;
+}
+
+.LandingStatCard {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 24px;
+  padding: 2rem;
+  backdrop-filter: blur(10px);
+}
+
+.LandingStatCard h2 {
+  font-size: 2.25rem;
+  margin-bottom: 0.75rem;
+}
+
+.LandingStatCard p {
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+.LandingFeatures,
+.LandingMarkets,
+.LandingChatAwards,
+.LandingTestimonials,
+.LandingSponsors,
+.LandingPlans,
+.LandingContact {
+  padding: 4rem 0;
+}
+
+.LandingSectionTitle p {
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  font-size: 0.8rem;
+  margin-bottom: 0.75rem;
+}
+
+.LandingSectionTitle h2 {
+  font-size: clamp(2rem, 3vw, 3rem);
+  max-width: 700px;
+  line-height: 1.2;
+}
+
+.LandingFeatureGrid,
+.LandingMarketsGrid,
+.LandingTestimonialGrid,
+.LandingPlanGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(220px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.LandingFeatureCard,
+.LandingMarketCard,
+.LandingTestimonialCard,
+.LandingPlanCard,
+.LandingChat,
+.LandingAwards,
+.LandingContactCard {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 24px;
+  padding: 2rem;
+}
+
+.LandingFeatureCard h3,
+.LandingMarketCard h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.75rem;
+}
+
+.LandingFeatureCard p,
+.LandingMarketCard p,
+.LandingTestimonialCard p,
+.LandingPlanCard p,
+.LandingChat p {
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+.LandingMarketsGrid {
+  margin-top: 2rem;
+}
+
+.LandingChatAwards {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 1.5rem;
+  align-items: stretch;
+}
+
+.LandingChat h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.LandingChat p {
+  margin-bottom: 1.5rem;
+}
+
+.LandingAwards {
+  display: grid;
+  gap: 1rem;
+}
+
+.LandingAwards span {
+  display: inline-block;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.LandingAwards h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.LandingTestimonialCard strong {
+  color: var(--text-primary);
+}
+
+.LandingSponsorGrid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(120px, 1fr));
+  gap: 1rem;
+  align-items: center;
+  margin-top: 1.75rem;
+}
+
+.LandingSponsorGrid span {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 14px;
+  padding: 1rem;
+  text-align: center;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+}
+
+.LandingPlanCard {
+  text-align: center;
+}
+
+.LandingPlanCard.featured {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.18);
+}
+
+/* ─── Investment Plans Section ─────────────────────────────── */
+.InvPlansSection {
+  padding: 6rem 0;
+  background: linear-gradient(160deg, #0b0e14 0%, #111520 60%, #0d1018 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.InvPlansSection::before {
+  content: "";
+  position: absolute;
+  top: -200px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 800px;
+  height: 800px;
+  background: radial-gradient(
+    circle,
+    rgba(201, 168, 76, 0.06) 0%,
+    transparent 70%
+  );
+  pointer-events: none;
+}
+
+.InvPlansHeader {
+  text-align: center;
+  margin-bottom: 3.5rem;
+}
+
+.InvPlansEyebrow {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: #c9a84c;
+  margin-bottom: 1rem;
+}
+
+.InvPlansTitle {
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-weight: 800;
+  color: #fff;
+  margin: 0 0 1rem;
+  letter-spacing: -0.02em;
+}
+
+.InvPlansSubtitle {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.5);
+  max-width: 520px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+/* Grid layouts */
+.InvPlanGrid {
+  display: grid;
+  gap: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+.InvPlanGrid.four {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.InvPlanGrid.two {
+  grid-template-columns: repeat(2, minmax(0, 420px));
+  justify-content: center;
+}
+
+/* Card base */
+.InvPlanCard {
+  position: relative;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  padding: 2rem 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+  overflow: hidden;
+}
+
+.InvPlanCard::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--plan-accent, #6c8ebf);
+  border-radius: 20px 20px 0 0;
+}
+
+.InvPlanCard:hover {
+  transform: translateY(-4px);
+  border-color: rgba(255, 255, 255, 0.16);
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.3);
+}
+
+.InvPlanCard.featured {
+  background: rgba(201, 168, 76, 0.06);
+  border-color: rgba(201, 168, 76, 0.3);
+  box-shadow:
+    0 0 0 1px rgba(201, 168, 76, 0.15),
+    0 16px 48px rgba(0, 0, 0, 0.25);
+}
+
+.InvPlanCard.large {
+  padding: 2.25rem 2rem;
+}
+
+.InvPlanBadge {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  background: #c9a84c;
+  color: #0b0e14;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.3rem 0.75rem;
+  border-radius: 999px;
+}
+
+/* Card top section */
+.InvPlanTop {
+  margin-bottom: 1.25rem;
+}
+
+.InvPlanTier {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--plan-accent, #6c8ebf);
+  margin-bottom: 0.5rem;
+}
+
+.InvPlanName {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #fff;
+  margin: 0 0 0.75rem;
+  letter-spacing: -0.01em;
+}
+
+.InvPlanRange {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 0.6rem;
+  letter-spacing: -0.01em;
+}
+
+.InvPlanRoiRow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 999px;
+  padding: 0.3rem 0.75rem;
+}
+
+.InvPlanRoiLabel {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.InvPlanRoiValue {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #4caf8a;
+}
+
+/* Divider */
+.InvPlanDivider {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.07);
+  margin-bottom: 1.25rem;
+}
+
+/* Features list */
+.InvPlanFeatures {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.75rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.InvPlanFeatures li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  font-size: 0.83rem;
+  color: rgba(255, 255, 255, 0.6);
+  line-height: 1.55;
+}
+
+.InvCheckIcon {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  color: var(--plan-accent, #6c8ebf);
+  margin-top: 0.1rem;
+}
+
+/* CTA button */
+.InvPlanButton {
+  display: block;
+  width: 100%;
+  text-align: center;
+  padding: 0.85rem 1rem;
+  border-radius: 12px;
+  background: var(--plan-accent, #6c8ebf);
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.82rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  margin-top: auto;
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.InvPlanButton:hover {
+  opacity: 0.88;
+  transform: translateY(-1px);
+}
+
+.InvPlanCard.featured .InvPlanButton {
+  background: #c9a84c;
+  color: #0b0e14;
+}
+
+/* Responsive */
+@media (max-width: 1100px) {
+  .InvPlanGrid.four {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .InvPlanGrid.four,
+  .InvPlanGrid.two {
+    grid-template-columns: 1fr;
+  }
+}
+
+.LandingContactCard {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.LandingContactCard span {
+  display: inline-block;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  margin-bottom: 0.75rem;
+}
+
+.LandingContactCard h2 {
+  max-width: 640px;
+}
+
+.LandingFooter {
+  padding: 2rem 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.LandingFooterContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.LandingFooterLinks {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.LandingFooterLinks a {
+  color: var(--text-secondary);
+  text-decoration: none;
+}
+
+@media (max-width: 968px) {
+  .LandingHeader,
+  .LandingHeroContent,
+  .LandingFeatureGrid,
+  .LandingMarketsGrid,
+  .LandingChatAwards,
+  .LandingTestimonialGrid,
+  .LandingSponsorGrid,
+  .LandingPlanGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .LandingNav {
+    justify-content: flex-start;
+  }
+
+  .LandingHero {
+    padding: 3rem 0 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .LandingHeader {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 640px) {
+  .LandingHeroContent {
+    gap: 1.5rem;
+  }
+
+  .LandingHeroCopy h1 {
+    font-size: 2.5rem;
+  }
+
+  .LandingHeaderActions {
+    width: 100%;
+    justify-content: flex-start;
+  }
+}

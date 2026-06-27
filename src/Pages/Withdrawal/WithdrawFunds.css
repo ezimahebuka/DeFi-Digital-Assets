@@ -1,0 +1,386 @@
+.WithdrawFundsBody {
+  width: 100%;
+}
+
+.WithdrawFundsBody h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  color: var(--text-primary);
+}
+
+.WithdrawFundsContent {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 2rem;
+}
+
+/* Left Section */
+.WithdrawFundsLeft {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.WithdrawFundsBox {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 1.5rem;
+}
+
+.WithdrawFundsBox h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+}
+
+.WithdrawFundsBox input[type="number"],
+.WithdrawFundsBox input[type="text"],
+.WithdrawFundsBox textarea {
+  width: 100%;
+  background: var(--secondary-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 1rem;
+  font-size: 1rem;
+  color: var(--text-primary);
+  transition: all 0.3s ease;
+  font-family: inherit;
+}
+
+.WithdrawFundsBox textarea {
+  resize: vertical;
+  min-height: 60px;
+}
+
+.WithdrawFundsBox input:focus,
+.WithdrawFundsBox textarea:focus {
+  border-color: var(--accent-primary);
+  box-shadow: 0 0 0 3px rgba(245, 245, 245, 0.12);
+}
+
+.error-text {
+  color: var(--accent-danger);
+  font-size: 0.85rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0;
+}
+
+.info-text {
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0;
+}
+
+/* OTP Section */
+.WithdrawOTPHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.otp-button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  font-size: 0.9rem;
+  background: var(--secondary-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.otp-button:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.otp-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.otp-button svg {
+  font-size: 1.25rem;
+}
+
+/* Payment Methods List */
+.WithdrawMethodsList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.WithdrawMethodItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--secondary-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 1rem 1.25rem;
+  transition: all 0.3s ease;
+}
+
+.WithdrawMethodItem.expandable {
+  cursor: pointer;
+}
+
+.WithdrawMethodItem.expandable:hover {
+  border-color: var(--accent-primary);
+  transform: translateX(4px);
+}
+
+.WithdrawMethodItem.expanded {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  border-color: var(--accent-primary);
+}
+
+.WithdrawMethodItem:not(.expandable):hover {
+  border-color: var(--accent-primary);
+  transform: translateX(4px);
+}
+
+.WithdrawMethodItem span {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.WithdrawMethodItem .expand-icon {
+  font-size: 0.85rem;
+  color: var(--accent-primary);
+  transition: transform 0.3s ease;
+}
+
+.WithdrawMethodItem input[type="radio"] {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  accent-color: var(--accent-primary);
+}
+
+/* Network Options Dropdown */
+.WithdrawNetworkOptions {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-top: none;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  padding: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.WithdrawNetworkOption {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--secondary-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  padding: 0.875rem 1rem;
+  margin-bottom: 0.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.WithdrawNetworkOption:last-child {
+  margin-bottom: 0;
+}
+
+.WithdrawNetworkOption:hover {
+  border-color: var(--accent-primary);
+  background: rgba(245, 245, 245, 0.08);
+  transform: translateX(8px);
+}
+
+.WithdrawNetworkOption span {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  letter-spacing: 0.3px;
+}
+
+.WithdrawNetworkOption input[type="radio"] {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+  accent-color: var(--accent-primary);
+}
+
+/* Submit Button */
+.submit-button {
+  width: 100%;
+  padding: 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  background: var(--secondary-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.submit-button:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.submit-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Right Side - Summary */
+.WithdrawFundsRight {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.WithdrawSummaryCard {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.08),
+    rgba(255, 255, 255, 0.04)
+  );
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+  padding: 2rem;
+  color: var(--text-primary);
+}
+
+.WithdrawSummaryCard h4 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.summary-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.summary-item:last-child {
+  border-bottom: none;
+}
+
+.summary-item span {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+}
+
+.summary-item strong {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.WithdrawInfoCard {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 1.5rem;
+}
+
+.WithdrawInfoCard h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+}
+
+.WithdrawInfoCard ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.WithdrawInfoCard li {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  line-height: 1.5;
+}
+
+.WithdrawInfoCard li::before {
+  content: "•";
+  color: var(--accent-primary);
+  font-weight: 700;
+  font-size: 1.25rem;
+  line-height: 1;
+}
+
+/* Mobile Responsive */
+@media (max-width: 968px) {
+  .WithdrawFundsContent {
+    grid-template-columns: 1fr;
+  }
+
+  .WithdrawFundsBody h1 {
+    font-size: 1.5rem;
+  }
+
+  .WithdrawOTPHeader {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1rem;
+  }
+
+  .otp-button {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .WithdrawSummaryCard {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .WithdrawFundsBox {
+    padding: 1rem;
+  }
+
+  .WithdrawMethodItem {
+    padding: 0.875rem 1rem;
+  }
+
+  .WithdrawMethodItem span {
+    font-size: 0.85rem;
+  }
+
+  .summary-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+  }
+}

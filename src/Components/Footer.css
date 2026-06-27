@@ -1,0 +1,144 @@
+.Footer {
+  background: linear-gradient(180deg, #0a0d12 0%, #13161c 100%);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 3rem 0 1.5rem;
+  margin-top: 5rem;
+  color: var(--text-primary);
+}
+
+.FooterContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.FooterContent {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.FooterColumn h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-primary);
+}
+
+.FooterColumn ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.FooterColumn li {
+  margin-bottom: 0.75rem;
+}
+
+.FooterColumn a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.25s ease;
+  display: inline-flex;
+  align-items: center;
+}
+
+.FooterColumn a:hover {
+  color: var(--text-primary);
+}
+
+.SocialLinks {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.SocialLink {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 0;
+  transition: all 0.25s ease;
+}
+
+.SocialLink svg {
+  width: 20px;
+  height: 20px;
+}
+
+.SocialLink:hover {
+  background: rgba(255, 255, 255, 0.15);
+  color: var(--text-primary);
+  transform: translateY(-3px);
+}
+
+.SocialLink.TwitterIcon:hover {
+  background: rgba(29, 155, 240, 0.2);
+  color: #1d9bf0;
+}
+
+.SocialLink.FacebookIcon:hover {
+  background: rgba(59, 89, 152, 0.2);
+  color: #3b5998;
+}
+
+.SocialLink.LinkedInIcon:hover {
+  background: rgba(0, 119, 181, 0.2);
+  color: #0077b5;
+}
+
+.SocialLink.InstagramIcon:hover {
+  background: rgba(229, 45, 108, 0.2);
+  color: #e52d6c;
+}
+
+.FooterBottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  padding-top: 1.5rem;
+  text-align: center;
+}
+
+.FooterBottom p {
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  margin: 0.5rem 0;
+}
+
+.FooterDisclaimer {
+  font-size: 0.8rem !important;
+  font-style: italic;
+  margin-top: 0.75rem;
+}
+
+@media (max-width: 768px) {
+  .FooterContent {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .Footer {
+    padding: 2rem 0 1rem;
+    margin-top: 3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .FooterContent {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .FooterColumn h4 {
+    font-size: 0.9rem;
+  }
+}

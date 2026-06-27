@@ -1,0 +1,312 @@
+.DepositBody {
+  width: 100%;
+}
+
+.DepositBody h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  color: var(--text-primary);
+}
+
+.DepositContent {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 2rem;
+}
+
+/* Left Section */
+.DepositContentLeft {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.DepositContentLeftTop {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 1.5rem;
+}
+
+.DepositContentLeftTop h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+}
+
+.DepositContentLeftTop input {
+  width: 100%;
+  background: var(--secondary-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 1rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  transition: all 0.3s ease;
+}
+
+.DepositContentLeftTop input:focus {
+  border-color: var(--accent-primary);
+  box-shadow: 0 0 0 3px rgba(245, 245, 245, 0.12);
+}
+
+.DepositContentLeftTop p {
+  margin-top: 0.5rem;
+  margin-left: 0.5rem;
+  color: var(--accent-danger);
+  font-size: 0.85rem;
+}
+
+.DepositContentLeftDown {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.DepositContentLeftDown h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.DepositContentLeftDownInput {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--secondary-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 1rem 1.25rem;
+  transition: all 0.3s ease;
+}
+
+.DepositContentLeftDownInput.expandable {
+  cursor: pointer;
+}
+
+.DepositContentLeftDownInput.expandable:hover {
+  border-color: var(--accent-primary);
+  transform: translateX(4px);
+}
+
+.DepositContentLeftDownInput.expanded {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  border-color: var(--accent-primary);
+}
+
+.DepositContentLeftDownInput:not(.expandable):hover {
+  border-color: var(--accent-primary);
+  transform: translateX(4px);
+}
+
+.DepositContentLeftDownInput span {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.DepositContentLeftDownInput .expand-icon {
+  font-size: 0.85rem;
+  color: var(--accent-primary);
+  transition: transform 0.3s ease;
+}
+
+.DepositContentLeftDownInput input[type="radio"] {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  accent-color: var(--accent-primary);
+}
+
+/* Network Options Dropdown */
+.DepositNetworkOptions {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-top: none;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.DepositNetworkOption {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--secondary-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  padding: 0.875rem 1rem;
+  margin-bottom: 0.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.DepositNetworkOption:last-child {
+  margin-bottom: 0;
+}
+
+.DepositNetworkOption:hover {
+  border-color: var(--accent-primary);
+  background: rgba(245, 245, 245, 0.08);
+  transform: translateX(8px);
+}
+
+.DepositNetworkOption span {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  letter-spacing: 0.3px;
+}
+
+.DepositNetworkOption input[type="radio"] {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+  accent-color: var(--accent-primary);
+}
+
+.DepositContentLeftDown button {
+  width: 100%;
+  padding: 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-top: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.DepositContentLeftDown button:disabled {
+  background: var(--text-muted);
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Right Section */
+.DepositContentRight {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.DepositContentRightA {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.12),
+    rgba(255, 255, 255, 0.06)
+  );
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 12px;
+  padding: 2rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.DepositContentRightA::before {
+  content: "";
+  position: absolute;
+  width: 220px;
+  height: 220px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 50%;
+  top: -110px;
+  right: -110px;
+}
+
+.DepositContentRightA h4 {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+  z-index: 1;
+}
+
+.DepositContentRightABreak {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.DepositContentRightABreak span {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.DepositContentRightB {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 1.5rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.DepositContentRightB:hover {
+  border-color: var(--accent-primary);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.DepositContentRightB p {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--accent-primary);
+  margin: 0;
+}
+
+/* Mobile Responsive */
+@media (max-width: 968px) {
+  .DepositContent {
+    grid-template-columns: 1fr;
+  }
+
+  .DepositBody h1 {
+    font-size: 1.5rem;
+  }
+
+  .DepositContentRightABreak {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .DepositContentLeftTop input {
+    font-size: 1rem;
+  }
+
+  .DepositContentLeftDownInput {
+    padding: 0.875rem 1rem;
+  }
+
+  .DepositContentLeftDownInput span {
+    font-size: 0.85rem;
+  }
+
+  .DepositContentRightABreak {
+    font-size: 1.75rem;
+  }
+}

@@ -1,0 +1,182 @@
+.PageWrapper {
+  min-height: 100vh;
+  background: linear-gradient(180deg, #0f1217 0%, #14161b 100%);
+  color: var(--text-primary);
+}
+
+.PageContent {
+  padding: 5rem 0;
+}
+
+.PageHero {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 24px;
+  padding: 3rem;
+  margin-bottom: 3rem;
+}
+
+.PageHero span {
+  display: inline-block;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 0.85rem;
+  margin-bottom: 1rem;
+}
+
+.PageHero h1 {
+  font-size: clamp(2rem, 3vw, 3.5rem);
+  margin-bottom: 1rem;
+}
+
+.PageHero p {
+  line-height: 1.8;
+  color: var(--text-secondary);
+}
+
+.PagePlansList {
+  margin-bottom: 2rem;
+}
+
+.PagePlanGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+.PagePlanCard {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 24px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.PagePlanCard.featured {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.18);
+  transform: scale(1.02);
+}
+
+.PagePlanCard h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.PagePlanRange {
+  color: var(--text-secondary);
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.PagePlanDuration {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+.PagePlanROI {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.PageROILabel {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.PageROIValue {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.PagePlanReviews {
+  text-align: center;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+  font-style: italic;
+}
+
+.PagePlanSection {
+  margin-bottom: 1.5rem;
+  flex: 1;
+}
+
+.PagePlanSection h4 {
+  font-size: 1rem;
+  margin-bottom: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-primary);
+}
+
+.PageInstrumentsList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.PageInstrumentsList li {
+  padding: 0.4rem 0 0.4rem 1rem;
+  position: relative;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+}
+
+.PageInstrumentsList li:before {
+  content: "•";
+  position: absolute;
+  left: 0;
+}
+
+.PagePlanSection p {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  margin: 0.5rem 0;
+}
+
+.PagePlanSection strong {
+  color: var(--text-primary);
+}
+
+.PageButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 2rem;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.25s ease;
+}
+
+.PageButton.primary {
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: var(--text-primary);
+}
+
+.PageButton.primary:hover {
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.PageButton.outline {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  color: var(--text-secondary);
+}
+
+.PageButton.outline:hover {
+  background: rgba(255, 255, 255, 0.06);
+}

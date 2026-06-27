@@ -1,0 +1,124 @@
+.PageWrapper {
+  min-height: 100vh;
+  background: linear-gradient(180deg, #0f1217 0%, #14161b 100%);
+  color: var(--text-primary);
+}
+
+.PageContent {
+  padding: 5rem 0;
+}
+
+.PageHero {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 24px;
+  padding: 3rem;
+  margin-bottom: 3rem;
+}
+
+.PageHero span {
+  display: inline-block;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 0.85rem;
+  margin-bottom: 1rem;
+}
+
+.PageHero h1 {
+  font-size: clamp(2rem, 3vw, 3.5rem);
+  margin-bottom: 1rem;
+}
+
+.PageHero p {
+  line-height: 1.8;
+  color: var(--text-secondary);
+}
+
+.PageTermsContent {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 24px;
+  padding: 2rem;
+  margin-bottom: 3rem;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.PageTermsSection {
+  margin-bottom: 2rem;
+}
+
+.PageTermsSection:last-child {
+  margin-bottom: 0;
+}
+
+.PageTermsSection h2 {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+}
+
+.PageTermsSection p {
+  line-height: 1.8;
+  color: var(--text-secondary);
+}
+
+.PageTermsList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.PageTermsList li {
+  padding: 0.75rem 0 0.75rem 1.5rem;
+  position: relative;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.PageTermsList li:before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.PageCTA {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 24px;
+  padding: 3rem;
+  text-align: center;
+}
+
+.PageCTA h2 {
+  font-size: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+.PageCTA p {
+  color: var(--text-secondary);
+  margin-bottom: 1.5rem;
+}
+
+.PageButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 2rem;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.25s ease;
+}
+
+.PageButton.primary {
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: var(--text-primary);
+}
+
+.PageButton.primary:hover {
+  background: rgba(255, 255, 255, 0.18);
+}

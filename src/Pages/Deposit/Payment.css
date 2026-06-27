@@ -1,0 +1,322 @@
+.PaymentBody {
+  min-height: 100vh;
+  padding: 2rem;
+  background: linear-gradient(
+    135deg,
+    var(--primary-bg) 0%,
+    var(--secondary-bg) 100%
+  );
+}
+
+.PaymentContainer {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.PaymentHeader {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.PaymentHeader h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.PaymentHeader p {
+  font-size: 1rem;
+  color: var(--text-secondary);
+}
+
+.PaymentContent {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+
+.PaymentMethodInfo {
+  background: linear-gradient(
+    135deg,
+    rgba(245, 245, 245, 0.12),
+    rgba(208, 208, 208, 0.12)
+  );
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.PaymentMethodInfo h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.PaymentMethodInfo p {
+  font-size: 1rem;
+  color: var(--text-secondary);
+}
+
+.PaymentAmountCard {
+  background: rgba(17, 17, 17, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 18px;
+  padding: 2rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  color: var(--text-primary);
+  backdrop-filter: blur(18px);
+}
+
+.PaymentAmountCard h4 {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.PaymentAmountCard h2 {
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.PaymentWalletSection {
+  margin-bottom: 2rem;
+}
+
+.PaymentWalletSection h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+}
+
+.PaymentWalletAddress {
+  background: var(--secondary-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.PaymentWalletAddress input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: var(--text-primary);
+  font-size: 0.95rem;
+  font-family: monospace;
+}
+
+.PaymentWalletAddress button {
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.PaymentQRCode {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.PaymentQRCode img {
+  max-width: 250px;
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  border: 2px solid var(--border-color);
+  padding: 1rem;
+  background: white;
+}
+
+.PaymentInstructions {
+  background: var(--secondary-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.PaymentInstructions h4 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+}
+
+.PaymentInstructions ol {
+  padding-left: 1.5rem;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.PaymentInstructions li {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.PaymentUploadSection {
+  margin-bottom: 2rem;
+}
+
+.PaymentUploadSection h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+}
+
+.PaymentUploadBox {
+  background: var(--secondary-bg);
+  border: 2px dashed var(--border-color);
+  border-radius: 12px;
+  padding: 2rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.PaymentUploadBox:hover {
+  border-color: var(--accent-primary);
+  background: rgba(245, 245, 245, 0.08);
+}
+
+.PaymentUploadBox svg {
+  font-size: 3rem;
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+}
+
+.PaymentUploadBox p {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.5rem;
+}
+
+.PaymentUploadBox input[type="file"] {
+  display: none;
+}
+
+.PaymentActions {
+  display: flex;
+  gap: 1rem;
+}
+
+.PaymentActions button {
+  flex: 1;
+  padding: 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.PaymentActions button.secondary {
+  background: var(--secondary-bg);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+}
+
+.PaymentActions button.secondary:hover {
+  background: var(--border-color);
+}
+
+.PaymentWarning {
+  background: rgba(138, 138, 138, 0.12);
+  border: 1px solid var(--accent-warning);
+  border-radius: 12px;
+  padding: 1rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  margin-top: 2rem;
+}
+
+.PaymentWarning svg {
+  font-size: 1.5rem;
+  color: var(--accent-warning);
+  flex-shrink: 0;
+  margin-top: 0.125rem;
+}
+
+.PaymentWarning p {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .PaymentBody {
+    padding: 1rem;
+  }
+
+  .PaymentContent {
+    padding: 1.5rem;
+  }
+
+  .PaymentHeader h1 {
+    font-size: 1.5rem;
+  }
+
+  .PaymentAmountCard h2 {
+    font-size: 2.5rem;
+  }
+
+  .PaymentActions {
+    flex-direction: column;
+  }
+
+  .PaymentActions button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .PaymentAmountCard {
+    padding: 1.5rem;
+  }
+
+  .PaymentAmountCard h2 {
+    font-size: 2rem;
+  }
+
+  .PaymentWalletAddress {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .PaymentWalletAddress button {
+    width: 100%;
+  }
+}
+
+.PaymentQRCode {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  padding: 1.25rem;
+  background: #ffffff;
+  border-radius: 12px;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+}

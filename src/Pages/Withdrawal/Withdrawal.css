@@ -1,0 +1,304 @@
+.WithdrawalBody {
+  width: 100%;
+}
+
+.WithdrawalBody h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  color: var(--text-primary);
+}
+
+.WithdrawalReqBody {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.WithdrawalReqBodyContent {
+  max-width: 800px;
+  width: 100%;
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.WithdrawalReqBodyContentTop {
+  background: linear-gradient(
+    135deg,
+    var(--accent-primary),
+    var(--accent-secondary)
+  );
+  padding: 3rem 2rem;
+  text-align: center;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.WithdrawalReqBodyContentTop::before {
+  content: "";
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  top: -150px;
+  right: -150px;
+}
+
+.WithdrawalIconWrapper {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto 1.5rem;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+}
+
+.withdrawal-icon {
+  font-size: 3rem;
+  color: white;
+}
+
+.WithdrawalReqBodyContentTop h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 0.75rem;
+  position: relative;
+  z-index: 1;
+}
+
+.withdrawal-subtitle {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.WithdrawalReqContentDown {
+  padding: 2rem;
+}
+
+.withdrawal-info-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.withdrawal-info-item {
+  background: var(--secondary-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.withdrawal-info-item:hover {
+  border-color: var(--accent-primary);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.info-label {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 500;
+}
+
+.info-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.withdrawal-features {
+  margin-bottom: 2rem;
+}
+
+.withdrawal-features h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 1.25rem;
+}
+
+.withdrawal-features ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.withdrawal-features li {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  background: var(--secondary-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 1.25rem;
+  transition: all 0.3s ease;
+}
+
+.withdrawal-features li:hover {
+  border-color: var(--accent-primary);
+  transform: translateX(4px);
+}
+
+.feature-icon {
+  font-size: 2rem;
+  flex-shrink: 0;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(
+    135deg,
+    rgba(245, 245, 245, 0.12),
+    rgba(208, 208, 208, 0.12)
+  );
+  border-radius: 10px;
+}
+
+.withdrawal-features li div {
+  flex: 1;
+}
+
+.withdrawal-features li strong {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.withdrawal-features li p {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin: 0;
+  line-height: 1.5;
+}
+
+.withdrawal-cta-button {
+  width: 100%;
+  padding: 1.25rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  background: var(--secondary-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.withdrawal-cta-button:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-xl);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.withdrawal-cta-button svg {
+  font-size: 1.25rem;
+}
+
+.withdrawal-notice {
+  background: rgba(138, 138, 138, 0.12);
+  border: 1px solid var(--accent-warning);
+  border-radius: 12px;
+  padding: 1rem;
+}
+
+.withdrawal-notice p {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .WithdrawalBody h1 {
+    font-size: 1.5rem;
+  }
+
+  .WithdrawalReqBodyContentTop {
+    padding: 2rem 1.5rem;
+  }
+
+  .WithdrawalReqBodyContentTop h2 {
+    font-size: 1.5rem;
+  }
+
+  .WithdrawalIconWrapper {
+    width: 80px;
+    height: 80px;
+  }
+
+  .withdrawal-icon {
+    font-size: 2.5rem;
+  }
+
+  .withdrawal-info-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .WithdrawalReqContentDown {
+    padding: 1.5rem;
+  }
+
+  .withdrawal-features li {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .feature-icon {
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .WithdrawalReqBodyContentTop {
+    padding: 1.5rem 1rem;
+  }
+
+  .withdrawal-subtitle {
+    font-size: 0.9rem;
+  }
+
+  .info-value {
+    font-size: 1.25rem;
+  }
+
+  .withdrawal-cta-button {
+    font-size: 1rem;
+    padding: 1rem;
+  }
+}

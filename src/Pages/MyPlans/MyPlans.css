@@ -1,0 +1,816 @@
+.MyPlansBody {
+  width: 100%;
+}
+
+.MyPlansBody h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  color: var(--text-primary);
+}
+
+.MyPlansContent {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* Stats Cards */
+.MyPlansStats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.MyPlansStatCard {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.MyPlansStatCard::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(
+    90deg,
+    var(--accent-primary),
+    var(--accent-secondary)
+  );
+}
+
+.MyPlansStatCard:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-xl);
+  border-color: var(--accent-primary);
+}
+
+.stat-icon {
+  font-size: 2rem;
+  color: var(--accent-primary);
+  margin-bottom: 1rem;
+}
+
+.MyPlansStatCard h4 {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  margin-bottom: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.MyPlansStatCard h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--accent-success);
+  margin-bottom: 0.5rem;
+}
+
+.MyPlansStatCard p {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+/* Plans List */
+.MyPlansList {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 2rem;
+}
+
+.MyPlansList h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.MyPlansGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 1.5rem;
+}
+
+.MyPlanCard {
+  background: var(--secondary-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.MyPlanCard:hover {
+  border-color: var(--accent-primary);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.MyPlanCardHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.25rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.MyPlanCardHeader h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.MyPlanCardStatus {
+  padding: 0.375rem 0.875rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.MyPlanCardStatus.Active {
+  background: rgba(162, 162, 162, 0.18);
+  color: #a2a2a2;
+  border: 1px solid rgba(162, 162, 162, 0.18);
+}
+
+.MyPlanCardStatus.completed {
+  background: rgba(245, 245, 245, 0.12);
+  color: var(--accent-primary);
+}
+
+.MyPlanCardStatus.cancelled {
+  background: rgba(176, 176, 176, 0.12);
+  color: var(--accent-danger);
+}
+
+.MyPlanCardBody {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.MyPlanCardRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.MyPlanCardRow label {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.MyPlanCardRow span {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.MyPlanCardAmount {
+  background: linear-gradient(
+    135deg,
+    rgba(245, 245, 245, 0.12),
+    rgba(208, 208, 208, 0.12)
+  );
+  border-radius: 8px;
+  padding: 1rem;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.MyPlanCardAmount p {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.5rem;
+}
+
+.MyPlanCardAmount h3 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--accent-success);
+}
+
+.MyPlanCardFooter {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.MyPlanCardFooter button {
+  flex: 1;
+  padding: 0.75rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  background: var(--secondary-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.MyPlanCardFooter button:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.MyPlanCardFooter button.secondary {
+  background: var(--secondary-bg);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+}
+
+.MyPlanCardFooter button.secondary:hover {
+  background: var(--border-color);
+}
+
+/* Empty State */
+.MyPlansEmpty {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+}
+
+.MyPlansEmpty svg {
+  font-size: 4rem;
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+}
+
+.MyPlansEmpty h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin-bottom: 0.75rem;
+}
+
+.MyPlansEmpty p {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  margin-bottom: 1.5rem;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.MyPlansEmpty button {
+  padding: 0.875rem 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  background: linear-gradient(
+    135deg,
+    var(--accent-primary),
+    var(--accent-secondary)
+  );
+  border: none;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.MyPlansEmpty button:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Loader */
+.loader {
+  width: 50px;
+  height: 50px;
+  border: 4px solid var(--border-color);
+  border-top: 4px solid var(--accent-primary);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 0 auto 1rem;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Mobile Responsive */
+@media (max-width: 968px) {
+  .MyPlansBody h1 {
+    font-size: 1.5rem;
+  }
+
+  .MyPlansStats {
+    grid-template-columns: 1fr;
+  }
+
+  .MyPlansGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .MyPlansList {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .MyPlansBody h1 {
+    font-size: 1.25rem;
+  }
+
+  .MyPlansStatCard {
+    padding: 1.25rem;
+  }
+
+  .MyPlansStatCard h2 {
+    font-size: 1.75rem;
+  }
+
+  .MyPlansList {
+    padding: 1.25rem;
+  }
+
+  .MyPlanCard {
+    padding: 1.25rem;
+  }
+
+  .MyPlanCardHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  .MyPlanCardFooter {
+    flex-direction: column;
+  }
+
+  .MyPlanCardFooter button {
+    width: 100%;
+  }
+
+  .MyPlansEmpty {
+    padding: 3rem 1rem;
+  }
+
+  .MyPlansEmpty svg {
+    font-size: 3rem;
+  }
+}
+
+/* Detail Plan Styles */
+.DetailPlanBody {
+  width: 100%;
+}
+
+.DetailPlanHeader {
+  margin-bottom: 2rem;
+}
+
+.BackButton {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  background: var(--secondary-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  color: var(--text-primary);
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-bottom: 1rem;
+}
+
+.BackButton:hover {
+  background: var(--border-color);
+  transform: translateX(-4px);
+}
+
+.BackButton svg {
+  font-size: 1.25rem;
+}
+
+.DetailPlanHeader h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.DetailPlanContent {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.DetailPlanCard {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 2rem;
+  transition: all 0.3s ease;
+}
+
+.DetailPlanCard:hover {
+  box-shadow: var(--shadow-lg);
+}
+
+/* Header Card */
+.DetailPlanHeaderCard {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(
+    135deg,
+    rgba(245, 245, 245, 0.12),
+    rgba(208, 208, 208, 0.12)
+  );
+  border: 1px solid var(--accent-primary);
+}
+
+.DetailPlanHeaderInfo h2 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.DetailPlanSubtitle {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.DetailPlanHeaderActions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.StatusBadge {
+  padding: 0.5rem 1.25rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.StatusBadge.active {
+  background: #a2a2a2;
+  color: white;
+}
+
+.CancelButton {
+  padding: 0.75rem 1.5rem;
+  background: var(--accent-danger);
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.CancelButton:hover {
+  background: #dc2626;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Financial Summary */
+.CardTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.CardTitle svg {
+  color: var(--accent-primary);
+}
+
+.FinancialSummary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.FinancialItem {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex: 1;
+}
+
+.FinancialItem.total {
+  background: linear-gradient(
+    135deg,
+    rgba(245, 245, 245, 0.12),
+    rgba(208, 208, 208, 0.12)
+  );
+  border-radius: 12px;
+  padding: 1.5rem;
+}
+
+.FinancialIcon {
+  width: 60px;
+  height: 60px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+}
+
+.FinancialIcon.invested {
+  background: rgba(59, 130, 246, 0.1);
+  color: #3b82f6;
+}
+
+.FinancialIcon.profit {
+  background: rgba(162, 162, 162, 0.12);
+  color: #a2a2a2;
+}
+
+.FinancialIcon.total-icon {
+  background: linear-gradient(
+    135deg,
+    var(--accent-primary),
+    var(--accent-secondary)
+  );
+  color: white;
+}
+
+.FinancialInfo p {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.5rem;
+}
+
+.FinancialInfo h3 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.FinancialItem.total .FinancialInfo h3 {
+  color: var(--accent-primary);
+}
+
+.FinancialDivider {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text-muted);
+}
+
+/* Detail Info Grid */
+.DetailPlanGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.DetailInfoCard {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.5rem;
+}
+
+.DetailInfoCard:hover {
+  border-color: var(--accent-primary);
+  transform: translateY(-2px);
+}
+
+.DetailInfoIcon {
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+  background: linear-gradient(
+    135deg,
+    rgba(245, 245, 245, 0.12),
+    rgba(208, 208, 208, 0.12)
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  color: var(--accent-primary);
+}
+
+.DetailInfoContent p {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.DetailInfoContent h4 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+/* Custom Delete Modal */
+.CustomModalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  animation: fadeIn 0.3s ease;
+}
+
+.CustomModalContent {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 2rem;
+  max-width: 500px;
+  width: 90%;
+  animation: slideUp 0.3s ease;
+}
+
+.CustomModalContent h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+}
+
+.CustomModalContent p {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.CustomModalContent strong {
+  color: var(--accent-primary);
+}
+
+.CustomModalActions {
+  display: flex;
+  gap: 1rem;
+}
+
+.CustomModalButton {
+  flex: 1;
+  padding: 0.875rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.CustomModalButton.secondary {
+  background: var(--secondary-bg);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+}
+
+.CustomModalButton.secondary:hover {
+  background: var(--border-color);
+}
+
+.CustomModalButton.danger {
+  background: var(--secondary-bg);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+}
+
+.CustomModalButton.danger:hover {
+  background: rgba(255, 255, 255, 0.08);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 968px) {
+  .DetailPlanHeader h1 {
+    font-size: 1.5rem;
+  }
+
+  .DetailPlanHeaderCard {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+
+  .DetailPlanHeaderActions {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .CancelButton {
+    width: 100%;
+  }
+
+  .FinancialSummary {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .FinancialItem {
+    width: 100%;
+  }
+
+  .FinancialDivider {
+    transform: rotate(90deg);
+  }
+
+  .DetailPlanGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .DetailPlanHeader h1 {
+    font-size: 1.25rem;
+  }
+
+  .DetailPlanCard {
+    padding: 1.5rem;
+  }
+
+  .DetailPlanHeaderInfo h2 {
+    font-size: 1.25rem;
+  }
+
+  .FinancialInfo h3 {
+    font-size: 1.5rem;
+  }
+
+  .CustomModalContent {
+    padding: 1.5rem;
+  }
+
+  .CustomModalActions {
+    flex-direction: column;
+  }
+
+  .CustomModalButton {
+    width: 100%;
+  }
+}

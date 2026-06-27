@@ -1,0 +1,168 @@
+.ActivityToast {
+  position: fixed;
+  bottom: 1.75rem;
+  left: 1.75rem;
+  z-index: 9999;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.85rem;
+  background: rgba(13, 16, 24, 0.92);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 1rem 1.25rem;
+  max-width: 320px;
+  width: 100%;
+  backdrop-filter: blur(16px);
+  box-shadow:
+    0 16px 48px rgba(0, 0, 0, 0.45),
+    0 0 0 1px rgba(255, 255, 255, 0.04);
+  pointer-events: none;
+}
+
+/* accent bar on left */
+.ActivityToast::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  border-radius: 16px 0 0 16px;
+}
+
+.ActivityToast.deposit::before {
+  background: linear-gradient(180deg, #4caf8a, #27ae60);
+}
+
+.ActivityToast.withdrawal::before {
+  background: linear-gradient(180deg, #e8834c, #c9470a);
+}
+
+/* Enter animation */
+.ActivityToast.enter {
+  animation: toastSlideIn 0.45s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* Exit animation */
+.ActivityToast.exit {
+  animation: toastSlideOut 0.45s cubic-bezier(0.55, 0, 1, 0.45) both;
+}
+
+@keyframes toastSlideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-24px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+@keyframes toastSlideOut {
+  from {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(-24px) scale(0.96);
+  }
+}
+
+/* Avatar */
+.ATAvatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #2a3550, #1a2340);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.85);
+  flex-shrink: 0;
+  letter-spacing: 0.04em;
+}
+
+/* Body */
+.ATBody {
+  flex: 1;
+  min-width: 0;
+}
+
+.ATName {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 0.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.ATState {
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.4);
+  letter-spacing: 0.04em;
+}
+
+.ATAction {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.6);
+  line-height: 1.5;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+}
+
+.ATAction strong {
+  color: #fff;
+  font-weight: 700;
+}
+
+/* Badge */
+.ATBadge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.15rem 0.55rem;
+  border-radius: 999px;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+
+.ATBadge.deposit {
+  background: rgba(76, 175, 138, 0.15);
+  color: #4caf8a;
+  border: 1px solid rgba(76, 175, 138, 0.25);
+}
+
+.ATBadge.withdrawal {
+  background: rgba(232, 131, 76, 0.15);
+  color: #e8834c;
+  border: 1px solid rgba(232, 131, 76, 0.25);
+}
+
+/* Time */
+.ATTime {
+  font-size: 0.7rem;
+  color: rgba(255, 255, 255, 0.3);
+  margin-top: 0.35rem;
+  letter-spacing: 0.03em;
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .ActivityToast {
+    left: 1rem;
+    right: 1rem;
+    bottom: 1rem;
+    max-width: none;
+  }
+}

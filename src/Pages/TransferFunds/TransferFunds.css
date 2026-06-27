@@ -1,0 +1,567 @@
+.TransferFundsBody {
+  width: 100%;
+}
+
+.TransferFundsBody h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  color: var(--text-primary);
+}
+
+.TransferFundsContent {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 2rem;
+}
+
+/* Left Section */
+.TransferFundsLeft {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.TransferBalanceCard {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.12),
+    rgba(255, 255, 255, 0.06)
+  );
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 12px;
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  color: var(--text-primary);
+  position: relative;
+  overflow: hidden;
+}
+
+.TransferBalanceCard::before {
+  content: "";
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 50%;
+  top: -100px;
+  right: -50px;
+}
+
+.TransferBalanceIcon {
+  width: 70px;
+  height: 70px;
+  background: rgba(255, 255, 255, 0.18);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+.TransferBalanceInfo {
+  position: relative;
+  z-index: 1;
+}
+
+.TransferBalanceInfo h3 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.25rem;
+}
+
+.TransferBalanceInfo p {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+/* Transfer Form */
+.TransferForm {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.TransferFormGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.TransferFormGroup label {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.TransferFormGroup label svg {
+  color: var(--accent-primary);
+  font-size: 1rem;
+}
+
+.TransferFormGroup label span {
+  color: var(--accent-danger);
+}
+
+.TransferFormGroup input {
+  width: 100%;
+  background: var(--secondary-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 1rem;
+  font-size: 1rem;
+  color: var(--text-primary);
+  transition: all 0.3s ease;
+}
+
+.TransferFormGroup input:focus {
+  border-color: var(--accent-primary);
+  box-shadow: 0 0 0 3px rgba(245, 245, 245, 0.12);
+}
+
+.TransferFormGroup .error {
+  color: var(--accent-danger);
+  font-size: 0.85rem;
+  margin-top: 0.25rem;
+}
+
+.TransferFormGroup .info-text {
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  margin-top: 0.25rem;
+}
+
+/* Transfer Charge Info */
+.TransferChargeInfo {
+  background: var(--secondary-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.ChargeItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+}
+
+.ChargeItem strong {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.ChargeItem.total {
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--border-color);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.ChargeItem.total strong {
+  color: var(--accent-primary);
+  font-size: 1.25rem;
+}
+
+/* Form Actions */
+.TransferFormActions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.TransferFormActions button {
+  flex: 1;
+  padding: 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+}
+
+.TransferFormActions button:not(.secondary) {
+  background: var(--secondary-bg);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+}
+
+.TransferFormActions button:not(.secondary):hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.TransferFormActions button.secondary {
+  background: var(--secondary-bg);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+}
+
+.TransferFormActions button.secondary:hover:not(:disabled) {
+  background: var(--border-color);
+}
+
+.TransferFormActions button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Right Section */
+.TransferFundsRight {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.TransferSummaryCard {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 2rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.TransferSummaryCard::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(
+    90deg,
+    var(--accent-primary),
+    var(--accent-secondary)
+  );
+}
+
+.TransferSummaryIcon {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(
+    135deg,
+    rgba(245, 245, 245, 0.12),
+    rgba(208, 208, 208, 0.12)
+  );
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem;
+  font-size: 1.75rem;
+  color: var(--accent-primary);
+}
+
+.TransferSummaryCard h4 {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.TransferSummaryCard h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--accent-primary);
+  margin-bottom: 0.5rem;
+}
+
+.TransferSummaryCard p {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.TransferInfoCard {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 1.5rem;
+}
+
+.TransferInfoCard h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+}
+
+.TransferInfoCard ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.TransferInfoCard li {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  line-height: 1.5;
+}
+
+.TransferInfoCard li::before {
+  content: "•";
+  color: var(--accent-primary);
+  font-weight: 700;
+  font-size: 1.25rem;
+  line-height: 1;
+}
+
+/* Responsive */
+@media (max-width: 968px) {
+  .TransferFundsContent {
+    grid-template-columns: 1fr;
+  }
+
+  .TransferFundsBody h1 {
+    font-size: 1.5rem;
+  }
+
+  .TransferBalanceCard {
+    padding: 1.5rem;
+  }
+
+  .TransferBalanceIcon {
+    width: 60px;
+    height: 60px;
+    font-size: 1.75rem;
+  }
+
+  .TransferBalanceInfo h3 {
+    font-size: 2rem;
+  }
+
+  .TransferForm {
+    padding: 1.5rem;
+  }
+
+  .TransferFormActions {
+    flex-direction: column;
+  }
+
+  .TransferFormActions button {
+    width: 100%;
+  }
+
+  .TransferSummaryCard h2 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .TransferFundsBody h1 {
+    font-size: 1.25rem;
+  }
+
+  .TransferBalanceCard {
+    flex-direction: column;
+    text-align: center;
+    padding: 1.25rem;
+  }
+
+  .TransferBalanceInfo h3 {
+    font-size: 1.75rem;
+  }
+
+  .TransferForm {
+    padding: 1.25rem;
+  }
+
+  .TransferSummaryCard {
+    padding: 1.5rem;
+  }
+
+  .TransferSummaryCard h2 {
+    font-size: 1.75rem;
+  }
+}
+
+/* Transfer History */
+.TransferHistory {
+  margin-top: 2.5rem;
+}
+
+.TransferHistory h2 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 1.25rem;
+}
+
+.TransferHistoryEmpty {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  text-align: center;
+  padding: 2rem;
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+}
+
+.TransferHistoryList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.TransferHistoryItem {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  padding: 1rem 1.25rem;
+}
+
+.TransferHistoryIcon {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+.TransferHistoryIcon.sent {
+  background: rgba(239, 68, 68, 0.15);
+  color: #ef4444;
+}
+
+.TransferHistoryIcon.received {
+  background: rgba(34, 197, 94, 0.15);
+  color: #22c55e;
+}
+
+.TransferHistoryDetails {
+  flex: 1;
+}
+
+.TransferHistoryType {
+  font-size: 0.95rem;
+  color: var(--text-primary);
+  margin-bottom: 0.2rem;
+}
+
+.TransferHistoryDate {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+.TransferHistoryAmount {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.25rem;
+}
+
+.TransferHistoryAmount span.sent {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #ef4444;
+}
+
+.TransferHistoryAmount span.received {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #22c55e;
+}
+
+.TransferHistoryStatus {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  text-transform: capitalize;
+}
+
+.TransferHistoryHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.25rem;
+}
+
+.TransferHistoryHeader h2 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.TransferSeeAllBtn {
+  background: transparent;
+  border: 1px solid var(--border-color);
+  color: var(--accent-primary);
+  padding: 0.4rem 1rem;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.TransferSeeAllBtn:hover {
+  background: var(--border-color);
+}
+
+.TransferHistoryPageHeader {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.TransferHistoryPageHeader h1 {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.TransferBackBtn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.TransferBackBtn:hover {
+  background: var(--border-color);
+}

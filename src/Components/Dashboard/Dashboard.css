@@ -1,0 +1,584 @@
+.DashboardBody {
+  min-height: 100vh;
+  background: var(--primary-bg);
+}
+
+.DashboardWrapper {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* Sidebar Navigation */
+.DashboardNav {
+  width: 280px;
+  background: rgba(255, 255, 255, 0.05);
+  border-right: 1px solid rgba(255, 255, 255, 0.12);
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+  transition: all 0.3s ease;
+  z-index: 1000;
+  backdrop-filter: blur(18px);
+}
+
+.DashboardNavWrapper {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.DashboardNavLogo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.DashboardNavLogo img {
+  height: 40px;
+  object-fit: contain;
+}
+
+.DashboardNavLogoMenuFill {
+  display: none;
+  font-size: 1.5rem;
+  color: var(--text-primary);
+  cursor: pointer;
+}
+
+/* Account View */
+.DashboardNavAccountView {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 18px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  backdrop-filter: blur(18px);
+}
+
+.DashboardNavAccountViewPfp {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.5rem;
+}
+
+.HiMiniUser {
+  font-size: 1.5rem;
+  color: white;
+}
+
+.DashboardNavAccountViewInitials h2 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: white;
+  margin-bottom: 0.25rem;
+}
+
+.DashboardNavAccountViewInitials p {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.DashboardNavAccountViewBalance {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(255, 255, 255, 0.15);
+  padding: 0.75rem;
+  border-radius: 8px;
+  color: white;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.DashboardNavAccountViewBalance svg {
+  font-size: 1.2rem;
+}
+
+/* Navigation Links */
+.DashboardNavLinks {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.DashboardNavLinksRow1,
+.DashboardNavLinksRow2,
+.DashboardNavLinksRow3,
+.DashboardNavLinksRow4,
+.DashboardNavLinksRow5 {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.DashboardNavLinksItem {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.875rem 1rem;
+  border-radius: 8px;
+  color: var(--text-secondary);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 500;
+  background: transparent;
+  border: none;
+  width: 100%;
+  text-align: left;
+}
+
+.DashboardNavLinksItem:hover {
+  background: rgba(245, 245, 245, 0.12);
+  color: var(--accent-primary);
+}
+
+.DashboardNavLinksItem.current {
+  background: rgba(255, 255, 255, 0.12);
+  color: white;
+}
+
+.DashboardNavlinksIcons {
+  font-size: 1.25rem;
+}
+
+/* Contact Section */
+.DashboardNavContact {
+  margin-top: auto;
+  background: var(--secondary-bg);
+  border-radius: 12px;
+  padding: 1.25rem;
+  text-align: center;
+}
+
+.DashboardNavContactText h3 {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-primary);
+}
+
+.DashboardNavContactText p {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+}
+
+.DashboardNavContactBtn button {
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 0.9rem;
+}
+
+/* Main Content Area */
+.DashboardMain {
+  flex: 1;
+  margin-left: 280px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease;
+}
+
+.DashboardMainHeader {
+  background: var(--card-bg);
+  border-bottom: 1px solid var(--border-color);
+  padding: 1.25rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.DashboardMainHeaderBox {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.DashboardMainHeaderBoxHambuger {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.MdOutlineMenu {
+  display: none;
+  font-size: 1.75rem;
+  color: var(--text-primary);
+  cursor: pointer;
+}
+
+.notification-icon-wrapper {
+  position: relative;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.notification-icon-wrapper:hover {
+  background: rgba(245, 245, 245, 0.12);
+}
+
+.red-dot {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 8px;
+  height: 8px;
+  background: var(--accent-danger);
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.DashboardMainHeaderBoxAccount {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.DashboardMainHeaderBoxAccount:hover {
+  background: rgba(245, 245, 245, 0.12);
+}
+
+.DashboardMainHeaderBoxAccount div {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(
+    135deg,
+    var(--accent-primary),
+    var(--accent-secondary)
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.DashboardMainHeaderBoxAccount p {
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+/* User Dropdown */
+.DashboardMainHeaderUserAccDiv {
+  position: absolute;
+  top: 100%;
+  right: 2rem;
+  margin-top: 0.5rem;
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 1rem;
+  min-width: 200px;
+  box-shadow: var(--shadow-xl);
+  animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.DashboardMainHeaderUserAccDivWrap p {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.DashboardMainHeaderUserAccDivPfp,
+.DashboardMainHeaderUserAccDivLogout {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: var(--text-primary);
+  font-size: 0.95rem;
+}
+
+.DashboardMainHeaderUserAccDivPfp:hover,
+.DashboardMainHeaderUserAccDivLogout:hover {
+  background: rgba(245, 245, 245, 0.12);
+  color: var(--accent-primary);
+}
+
+/* Notification Bar */
+.notificationBar {
+  position: fixed;
+  right: -400px;
+  top: 0;
+  width: 380px;
+  height: 100vh;
+  background: #121212;
+  border-left: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.3s ease;
+  z-index: 1001;
+  overflow-y: auto;
+}
+
+.notificationBar.show {
+  right: 0;
+}
+
+.notification_header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.notification_header h4 {
+  font-size: 1.1rem;
+  color: var(--text-primary);
+}
+
+.cancel_icon {
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--text-secondary);
+  transition: all 0.3s ease;
+}
+
+.cancel_icon:hover {
+  color: var(--accent-danger);
+}
+
+.notification_status {
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.status_holder {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.n_status_card {
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  background: var(--secondary-bg);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.n_status_card:hover {
+  background: rgba(245, 245, 245, 0.12);
+}
+
+.n_status_card h4 {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+.notification_body {
+  padding: 1rem;
+}
+
+.notification_card {
+  background: var(--secondary-bg);
+  border-radius: 12px;
+  padding: 1.25rem;
+  margin-bottom: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 1px solid transparent;
+}
+
+.notification_card:hover {
+  border-color: var(--accent-primary);
+  transform: translateY(-2px);
+}
+
+.notification_card h4 {
+  font-size: 1rem;
+  margin-bottom: 0.75rem;
+  color: var(--text-primary);
+}
+
+.notification_card p {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.5rem;
+}
+
+.investment_btn_div {
+  margin-top: 1rem;
+}
+
+.investment_btn {
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 0.9rem;
+}
+
+.no_notification {
+  text-align: center;
+  padding: 3rem 1rem;
+}
+
+.no_notification h4 {
+  color: var(--text-secondary);
+}
+
+/* Main Content */
+.DashboardMainContent {
+  flex: 1;
+  padding: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.DashboardSkeleton {
+  display: grid;
+  gap: 1.5rem;
+  padding: 1rem;
+}
+
+.DashboardSkeletonHeader {
+  width: 40%;
+  height: 24px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.DashboardSkeletonTop {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.DashboardSkeletonSection {
+  display: grid;
+  gap: 1rem;
+}
+
+.DashboardSkeletonGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.DashboardSkeletonCard {
+  min-height: 120px;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.06);
+  overflow: hidden;
+  position: relative;
+}
+
+.DashboardSkeletonLine {
+  width: 25%;
+  height: 18px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.pulse {
+  animation: pulse 1.6s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.45;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Footer */
+.DashboardMainFooter {
+  background: var(--card-bg);
+  border-top: 1px solid var(--border-color);
+  padding: 1.5rem 2rem;
+  text-align: center;
+}
+
+.DashboardMainFooter p {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .DashboardNav {
+    left: -280px;
+  }
+
+  .DashboardNav.active {
+    left: 0;
+  }
+
+  .DashboardMain {
+    margin-left: 0;
+  }
+
+  .MdOutlineMenu {
+    display: block;
+  }
+
+  .DashboardNavLogoMenuFill {
+    display: block;
+  }
+
+  .DashboardMainHeader {
+    padding: 1rem;
+  }
+
+  .DashboardMainContent {
+    padding: 1rem;
+  }
+
+  .notificationBar {
+    width: 100%;
+    right: -100%;
+  }
+
+  .notificationBar.show {
+    right: 0;
+  }
+}

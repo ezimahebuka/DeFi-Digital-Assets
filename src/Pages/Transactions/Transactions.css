@@ -1,0 +1,255 @@
+.TransactionsBody {
+  width: 100%;
+}
+
+.TransactionsBody h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  color: var(--text-primary);
+}
+
+/* Tab Navigation */
+.TransactionTabs {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  border-bottom: 2px solid var(--border-color);
+}
+
+.TransactionTab {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 1.5rem;
+  background: transparent;
+  border: none;
+  border-bottom: 3px solid transparent;
+  color: var(--text-secondary);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.TransactionTab svg {
+  font-size: 1.25rem;
+}
+
+.TransactionTab:hover {
+  color: var(--text-primary);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.TransactionTab.active {
+  color: var(--text-primary);
+  border-bottom-color: rgba(255, 255, 255, 0.6);
+}
+
+.tab-badge {
+  background: rgba(255, 255, 255, 0.18);
+  color: var(--primary-bg);
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.25rem 0.55rem;
+  border-radius: 12px;
+  min-width: 20px;
+  text-align: center;
+}
+
+/* Content */
+.TransactionContent {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+/* Table */
+.TransactionTable {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.TransactionTable table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.TransactionTable thead {
+  background: var(--secondary-bg);
+  border-bottom: 2px solid var(--border-color);
+}
+
+.TransactionTable th {
+  padding: 1.25rem 1.5rem;
+  text-align: left;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.TransactionTable tbody tr {
+  border-bottom: 1px solid var(--border-color);
+  transition: all 0.3s ease;
+}
+
+.TransactionTable tbody tr:hover {
+  background: var(--secondary-bg);
+}
+
+.TransactionTable tbody tr:last-child {
+  border-bottom: none;
+}
+
+.TransactionTable td {
+  padding: 1.25rem 1.5rem;
+  font-size: 0.95rem;
+  color: var(--text-primary);
+}
+
+.TransactionTable td.amount {
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--accent-success);
+}
+
+.TransactionTable td.wallet-address {
+  font-family: monospace;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+/* Status Badges */
+.status {
+  display: inline-block;
+  padding: 0.4rem 0.9rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.status-success {
+  background: rgba(34, 197, 94, 0.1);
+  color: var(--accent-success);
+}
+
+.status-pending {
+  background: rgba(251, 191, 36, 0.1);
+  color: #fbbf24;
+}
+
+.status-failed {
+  background: rgba(176, 176, 176, 0.12);
+  color: var(--accent-danger);
+}
+
+/* Empty State */
+.TransactionsEmpty {
+  text-align: center;
+  padding: 4rem 2rem;
+}
+
+.TransactionsEmpty svg {
+  font-size: 4rem;
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+}
+
+.TransactionsEmpty h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin-bottom: 0.5rem;
+}
+
+.TransactionsEmpty p {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+/* Loader */
+.loader {
+  width: 50px;
+  height: 50px;
+  border: 4px solid var(--border-color);
+  border-top: 4px solid var(--accent-primary);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 0 auto 1rem;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Responsive */
+@media (max-width: 968px) {
+  .TransactionsBody h1 {
+    font-size: 1.5rem;
+  }
+
+  .TransactionTabs {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .TransactionTab {
+    padding: 0.875rem 1.25rem;
+    font-size: 0.9rem;
+    white-space: nowrap;
+  }
+
+  .TransactionTable {
+    overflow-x: scroll;
+  }
+
+  .TransactionTable table {
+    min-width: 700px;
+  }
+
+  .TransactionTable th,
+  .TransactionTable td {
+    padding: 1rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .TransactionsBody h1 {
+    font-size: 1.25rem;
+  }
+
+  .TransactionTab {
+    padding: 0.75rem 1rem;
+    font-size: 0.85rem;
+  }
+
+  .TransactionTab svg {
+    font-size: 1rem;
+  }
+
+  .tab-badge {
+    font-size: 0.7rem;
+    padding: 0.2rem 0.4rem;
+  }
+
+  .TransactionsEmpty {
+    padding: 3rem 1rem;
+  }
+
+  .TransactionsEmpty svg {
+    font-size: 3rem;
+  }
+}

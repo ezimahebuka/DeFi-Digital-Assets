@@ -1,0 +1,135 @@
+.AboutPage {
+  min-height: 100vh;
+  background: linear-gradient(180deg, #0f1217 0%, #14161b 100%);
+  color: var(--text-primary);
+}
+
+.AboutHero {
+  padding: 6rem 0 3rem;
+}
+
+.AboutHeroContent {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+.AboutHeroContent span {
+  display: inline-block;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 0.8rem;
+  margin-bottom: 1rem;
+}
+
+.AboutHeroContent h1 {
+  font-size: clamp(2.5rem, 4vw, 4rem);
+  line-height: 1.05;
+  margin-bottom: 1.5rem;
+}
+
+.AboutHeroContent p {
+  max-width: 720px;
+  color: var(--text-secondary);
+  font-size: 1.05rem;
+  line-height: 1.8;
+  margin-bottom: 2rem;
+}
+
+.AboutButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 2rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--text-primary);
+  font-weight: 700;
+  text-transform: uppercase;
+  transition: all 0.25s ease;
+}
+
+.AboutButton:hover {
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.AboutValues {
+  padding: 4rem 0;
+}
+
+.AboutSectionTitle p {
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 0.8rem;
+  margin-bottom: 0.75rem;
+}
+
+.AboutSectionTitle h2 {
+  font-size: clamp(2rem, 3vw, 3rem);
+  line-height: 1.2;
+  max-width: 720px;
+}
+
+.AboutValuesGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(220px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.AboutValueCard {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 24px;
+  padding: 2rem;
+}
+
+.AboutValueCard h3 {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+}
+
+.AboutValueCard p {
+  color: var(--text-secondary);
+  line-height: 1.8;
+}
+
+.AboutMission {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(240px, 1fr));
+  gap: 1.5rem;
+  padding-bottom: 6rem;
+}
+
+.AboutMissionCard {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 24px;
+  padding: 2.5rem;
+}
+
+.AboutMissionCard h2 {
+  margin-bottom: 1rem;
+}
+
+.AboutMissionCard p {
+  color: var(--text-secondary);
+  line-height: 1.8;
+}
+
+@media (max-width: 968px) {
+  .AboutValuesGrid,
+  .AboutMission {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .AboutHero {
+    padding: 3rem 0 2rem;
+  }
+}

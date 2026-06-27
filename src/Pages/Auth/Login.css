@@ -1,0 +1,357 @@
+.LoginBody {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background: linear-gradient(
+    135deg,
+    var(--primary-bg) 0%,
+    var(--secondary-bg) 100%
+  );
+  position: relative;
+  overflow: hidden;
+}
+
+.LoginBody::before {
+  content: "";
+  position: absolute;
+  width: 520px;
+  height: 520px;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.14) 0%,
+    transparent 70%
+  );
+  top: -220px;
+  right: -180px;
+  border-radius: 50%;
+}
+
+.LoginBody::after {
+  content: "";
+  position: absolute;
+  width: 420px;
+  height: 420px;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.1) 0%,
+    transparent 70%
+  );
+  bottom: -200px;
+  left: -180px;
+  border-radius: 50%;
+}
+
+.LoginContainer {
+  width: min(100%, 960px);
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 40px;
+  padding: 2rem;
+  box-shadow: 0 40px 120px rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(16px);
+  position: relative;
+  z-index: 1;
+}
+
+.LoginCard {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 32px;
+  overflow: hidden;
+}
+
+.LoginHero {
+  background: linear-gradient(180deg, #f5f7fb 0%, #e9edf5 100%);
+  padding: 3rem 2.5rem;
+  text-align: center;
+  border-bottom: 1px solid rgba(32, 40, 55, 0.08);
+}
+
+.LoginHeroContent h1 {
+  margin: 0 auto 1rem;
+  max-width: 680px;
+  font-size: clamp(2.4rem, 3vw, 3.3rem);
+  color: #111827;
+}
+
+.LoginHeroContent p {
+  max-width: 680px;
+  margin: 0 auto;
+  color: #5b6674;
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+.LoginIllustration {
+  margin-top: 2rem;
+  max-width: 860px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.LoginIllustration img {
+  width: min(100%, 560px);
+  border-radius: 24px;
+  box-shadow: 0 30px 90px rgba(17, 24, 39, 0.12);
+}
+
+.LoginFormSection {
+  padding: 2.5rem;
+}
+
+.LoginFormHeader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.LoginLogoWrapper {
+  width: 80px;
+  height: 80px;
+  border-radius: 22px;
+  display: grid;
+  place-items: center;
+  background: rgba(17, 24, 39, 0.05);
+}
+
+.LoginLogoWrapper img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.LoginFormHeader h2 {
+  margin: 0;
+  font-size: 2rem;
+  color: #111827;
+}
+
+.LoginLeftInputErrorDiv {
+  display: none;
+  gap: 1rem;
+  background: rgba(248, 226, 226, 0.84);
+  border: 1px solid rgba(244, 214, 214, 0.9);
+  border-radius: 18px;
+  padding: 1rem 1.25rem;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.LoginLeftInputErrorDiv.show {
+  display: flex;
+}
+
+.LoginLeftInputErrorDiv ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.LoginLeftInputErrorDiv li {
+  color: #7f1d1d;
+  font-size: 0.95rem;
+}
+
+.LoginLeftInputErrorDiv span {
+  cursor: pointer;
+  color: #9b1c1c;
+  font-size: 1.2rem;
+}
+
+.LoginInputsGrid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.LoginLeftEmailDiv,
+.LoginLeftPasswordDiv {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.LoginLeftEmailDiv label,
+.LoginLeftPasswordDiv label {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #252f3a;
+}
+
+.LoginLeftEmailDiv label span,
+.LoginLeftPasswordDiv label span {
+  color: #d32f2f;
+}
+
+.LoginLeftEmailDivInputBox,
+.LoginLeftPasswordDivInputBox {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  background: #f7f8fb;
+  border: 1px solid rgba(226, 232, 240, 0.95);
+  border-radius: 16px;
+  padding: 0.95rem 1rem;
+  transition: all 0.3s ease;
+}
+
+.LoginLeftEmailDivInputBox:focus-within,
+.LoginLeftPasswordDivInputBox:focus-within {
+  border-color: rgba(59, 130, 246, 0.5);
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.12);
+}
+
+.CiMail,
+.FiKey {
+  font-size: 1.35rem;
+  color: #7e8b9b;
+}
+
+.LoginLeftEmailDivInputBox input,
+.LoginLeftPasswordDivInputBox input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #111827;
+  font-size: 0.98rem;
+  padding: 0;
+}
+
+.LoginLeftEmailDivInputBox input::placeholder,
+.LoginLeftPasswordDivInputBox input::placeholder {
+  color: #9ca3af;
+}
+
+.LoginLeftControlDiv {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 0.5rem;
+  flex-wrap: wrap;
+  font-size: 0.95rem;
+}
+
+.LoginLeftControlDivRememberDiv {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.LoginLeftControlDivRememberDiv input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+  accent-color: #3b82f6;
+}
+
+.LoginLeftControlDivRememberDiv label {
+  color: #6b7280;
+  cursor: pointer;
+}
+
+.LoginForgotLink {
+  color: #2563eb;
+  text-decoration: none;
+}
+
+.LoginForgotLink:hover {
+  text-decoration: underline;
+}
+
+.LoginLeftBtnDiv {
+  margin-top: 1.25rem;
+}
+
+.LoginLeftBtnDiv button {
+  width: 100%;
+  padding: 1rem;
+  font-size: 1rem;
+  font-weight: 700;
+  background: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 14px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.LoginLeftBtnDiv button:hover {
+  background: #1d4ed8;
+}
+
+.LoginLeftInfo {
+  margin-top: 1.75rem;
+  text-align: center;
+}
+
+.LoginLeftInfoSignUp {
+  color: #6b7280;
+  font-size: 0.95rem;
+  margin-bottom: 0.9rem;
+}
+
+.LoginLeftInfoSignUp a {
+  color: #2563eb;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.LoginLeftInfoSignUp a:hover {
+  text-decoration: underline;
+}
+
+.LoginLeftInfoRights {
+  color: #9ca3af;
+  font-size: 0.85rem;
+}
+
+@media (max-width: 920px) {
+  .LoginContainer {
+    padding: 1.5rem;
+  }
+
+  .LoginHero {
+    padding: 2.5rem 1.75rem;
+  }
+
+  .LoginIllustration img {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 720px) {
+  .LoginContainer {
+    padding: 1rem;
+  }
+
+  .LoginHero {
+    padding: 2rem 1.25rem;
+  }
+
+  .LoginFormSection {
+    padding: 1.75rem 1.25rem 2rem;
+  }
+
+  .LoginFormHeader h2 {
+    font-size: 1.65rem;
+  }
+}
+
+@media (max-width: 520px) {
+  .LoginBody {
+    padding: 1rem;
+  }
+
+  .LoginHeroContent h1 {
+    font-size: 2rem;
+  }
+
+  .LoginHeroContent p {
+    font-size: 0.95rem;
+  }
+}
