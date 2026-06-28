@@ -9,13 +9,13 @@ import "./Landing.css";
 const SLIDES = [
   {
     eyebrow: "Welcome to DeFi Digital Assets",
-    headline: "Stock Market",
-    sub: "It's time to make your money work for you. We help our clients achieve their financial ambitions by building lasting relationships.",
+    headline: "Your Capital, Working 24/7.",
+    sub: "Join thousands of investors earning consistent returns. Our platform puts your money to work across crypto, forex, metals and more.",
   },
   {
     eyebrow: "Trade · Invest · Grow",
-    headline: "Trade, Invest any time, any day.",
-    sub: "You can trade and invest your cryptocurrencies and watch your investment grow.",
+    headline: "Grow your wealth with smart investments.",
+    sub: "Put your money to work with our high-yield investment plans and watch your portfolio grow with up to 550% ROI.",
   },
   {
     eyebrow: "Global Investment Platform",
@@ -376,7 +376,16 @@ const Landing = () => {
               <h2>Trade the widest range of asset classes.</h2>
             </div>
             <div className="LandingMarketsGrid">
-              {MARKETS.map((m) => (
+              {MARKETS.slice(0, 4).map((m) => (
+                <div className="LandingMarketCard" key={m.name}>
+                  <div className="MarketIcon">{m.icon}</div>
+                  <h3>{m.name}</h3>
+                  <p>{m.desc}</p>
+                </div>
+              ))}
+            </div>
+            <div className="LandingMarketsGrid three">
+              {MARKETS.slice(4).map((m) => (
                 <div className="LandingMarketCard" key={m.name}>
                   <div className="MarketIcon">{m.icon}</div>
                   <h3>{m.name}</h3>
@@ -388,39 +397,39 @@ const Landing = () => {
         </section>
 
         {/* ══ HOW IT WORKS ════════════════════════════════ */}
-        <section className="HowItWorks container">
-          <div className="LandingSectionTitle centered">
-            <p>Get started in minutes</p>
-            <h2>Three simple steps to start investing.</h2>
-          </div>
-          <div className="HowGrid">
-            {[
-              {
-                step: "01",
-                title: "Create Account",
-                desc: "Sign up in under 2 minutes with just your email and a password.",
-              },
-              {
-                step: "02",
-                title: "Fund Your Wallet",
-                desc: "Deposit using crypto or bank transfer — instant processing.",
-              },
-              {
-                step: "03",
-                title: "Start Earning",
-                desc: "Choose a plan and watch your investment grow with 550% ROI.",
-              },
-            ].map((h) => (
-              <div className="HowCard" key={h.step}>
-                <div className="HowStep">{h.step}</div>
-                <h3>{h.title}</h3>
-                <p>{h.desc}</p>
-              </div>
-            ))}
+        <section className="HowItWorks">
+          <div className="container">
+            <div className="LandingSectionTitle centered">
+              <p>Get started in minutes</p>
+              <h2>Three simple steps to start investing.</h2>
+            </div>
+            <div className="HowGrid">
+              {[
+                {
+                  step: "01",
+                  title: "Create Account",
+                  desc: "Sign up in under 2 minutes with just your email and a password.",
+                },
+                {
+                  step: "02",
+                  title: "Fund Your Wallet",
+                  desc: "Deposit using crypto or bank transfer — instant processing.",
+                },
+                {
+                  step: "03",
+                  title: "Start Earning",
+                  desc: "Choose a plan and watch your investment grow with 550% ROI.",
+                },
+              ].map((h) => (
+                <div className="HowCard" key={h.step}>
+                  <div className="HowStep">{h.step}</div>
+                  <h3>{h.title}</h3>
+                  <p>{h.desc}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </section>
-
-        {/* ══ INVESTMENT PLANS ════════════════════════════ */}
         <section className="InvPlansSection" id="plans">
           <div className="container">
             <div className="InvPlansHeader">

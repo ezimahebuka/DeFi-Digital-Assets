@@ -677,15 +677,15 @@
 /* ── Markets ────────────────────────────────────────────── */
 .LandingMarkets {
   padding: 6rem 0;
-  background: #ffffff;
+  background: #0f172a;
 }
 
 .LandingMarkets .LandingSectionTitle p {
-  color: #5b21b6;
+  color: #818cf8;
 }
 
 .LandingMarkets .LandingSectionTitle h2 {
-  color: #0f0a1e;
+  color: #fff;
 }
 
 .LandingMarketsGrid {
@@ -695,9 +695,16 @@
   margin-top: 0;
 }
 
+.LandingMarketsGrid.three {
+  grid-template-columns: repeat(3, 1fr);
+  margin-top: 1.25rem;
+}
+
+/* Last row cards stretch to fill full width */
 .LandingMarketCard {
-  background: #f5f3ff;
-  border: 1px solid #e9d5ff;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 20px;
   padding: 1.75rem;
   transition: all 0.25s ease;
@@ -706,9 +713,9 @@
 
 .LandingMarketCard:hover {
   transform: translateY(-4px);
-  background: #ede9fe;
-  border-color: #a78bfa;
-  box-shadow: 0 20px 48px rgba(109, 40, 217, 0.12);
+  background: rgba(99, 102, 241, 0.12);
+  border-color: rgba(99, 102, 241, 0.4);
+  box-shadow: 0 20px 48px rgba(99, 102, 241, 0.15);
 }
 
 .MarketIcon {
@@ -720,18 +727,27 @@
   font-size: 1rem;
   font-weight: 700;
   margin-bottom: 0.5rem;
-  color: #0f0a1e;
+  color: #fff;
 }
 
 .LandingMarketCard p {
   font-size: 0.82rem;
-  color: rgba(15, 10, 30, 0.55);
+  color: rgba(255, 255, 255, 0.45);
   line-height: 1.6;
 }
 
 /* ── How It Works ───────────────────────────────────────── */
 .HowItWorks {
   padding: 6rem 0;
+  background: #ffffff;
+}
+
+.HowItWorks .LandingSectionTitle p {
+  color: #5b21b6;
+}
+
+.HowItWorks .LandingSectionTitle h2 {
+  color: #0f0a1e;
 }
 
 .HowGrid {
@@ -752,23 +768,29 @@
   background: linear-gradient(
     90deg,
     transparent,
-    rgba(79, 70, 229, 0.4),
+    rgba(109, 40, 217, 0.35),
     transparent
   );
   pointer-events: none;
 }
 
 .HowCard {
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.07);
+  background: #f5f3ff;
+  border: 1px solid #e9d5ff;
   border-radius: 20px;
   padding: 2rem;
   text-align: center;
-  transition: transform 0.25s ease;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
 }
 
 .HowCard:hover {
   transform: translateY(-4px);
+  border-color: #a78bfa;
+  box-shadow: 0 20px 48px rgba(109, 40, 217, 0.12);
+  background: #ede9fe;
 }
 
 .HowStep {
@@ -790,11 +812,12 @@
   font-size: 1.1rem;
   font-weight: 700;
   margin-bottom: 0.6rem;
+  color: #0f0a1e;
 }
 
 .HowCard p {
   font-size: 0.88rem;
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(15, 10, 30, 0.55);
   line-height: 1.7;
 }
 
