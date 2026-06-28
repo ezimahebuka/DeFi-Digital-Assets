@@ -1,11 +1,19 @@
-/* Global page styling */
+/* ── Base ───────────────────────────────────────────────── */
 .LandingPage {
   min-height: 100vh;
-  background: linear-gradient(180deg, #0f1217 0%, #14161b 100%);
-  color: var(--text-primary);
+  background: #07090f;
+  color: #fff;
   overflow-x: hidden;
+  font-family: inherit;
 }
 
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* ── Header ─────────────────────────────────────────────── */
 .LandingHeader {
   display: flex;
   align-items: center;
@@ -15,51 +23,39 @@
 }
 
 .LandingBrand {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 0.2rem;
   font-size: 1.1rem;
-  font-weight: 700;
-  letter-spacing: 0.18em;
+  font-weight: 800;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-}
-
-.LandingBrand small {
-  display: block;
-  font-size: 0.75rem;
-  font-weight: 400;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--text-secondary);
+  color: #fff;
 }
 
 .LandingNav {
   display: flex;
   align-items: center;
-  gap: 1.25rem;
+  gap: 1.5rem;
   flex-wrap: wrap;
 }
 
 .LandingNav a,
 .LandingNav button {
-  font-size: 0.95rem;
-  color: var(--text-secondary);
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.6);
   background: none;
   border: none;
   cursor: pointer;
-  position: relative;
+  transition: color 0.2s;
+  text-decoration: none;
 }
 
 .LandingNav a:hover,
 .LandingNav button:hover {
-  color: var(--text-primary);
+  color: #fff;
 }
 
 .LandingNavDropdown {
   position: relative;
 }
-
 .LandingNavDropdown button {
   display: inline-flex;
   align-items: center;
@@ -68,19 +64,19 @@
 
 .LandingDropdownMenu {
   position: absolute;
-  top: 100%;
+  top: calc(100% + 0.5rem);
   left: 0;
   min-width: 220px;
-  background: rgba(15, 18, 23, 0.98);
+  background: #0f1219;
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 14px;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
-  padding: 1rem;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  padding: 0.75rem;
   opacity: 0;
   visibility: hidden;
-  transform: translateY(10px);
+  transform: translateY(8px);
   transition: all 0.2s ease;
-  z-index: 10;
+  z-index: 100;
 }
 
 .LandingNavDropdown:hover .LandingDropdownMenu {
@@ -91,289 +87,721 @@
 
 .LandingDropdownMenu a {
   display: block;
-  padding: 0.75rem 1rem;
-  border-radius: 12px;
-  color: var(--text-secondary);
+  padding: 0.65rem 0.9rem;
+  border-radius: 10px;
+  color: rgba(255, 255, 255, 0.6);
   text-decoration: none;
-  transition:
-    background 0.2s ease,
-    color 0.2s ease;
+  font-size: 0.88rem;
+  transition: all 0.2s;
 }
 
 .LandingDropdownMenu a:hover {
   background: rgba(255, 255, 255, 0.06);
-  color: var(--text-primary);
+  color: #fff;
 }
 
 .LandingHeaderActions {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
-  flex-wrap: wrap;
+  gap: 0.6rem;
 }
 
 .LandingHeaderButton {
-  padding: 0.85rem 1.5rem;
+  padding: 0.7rem 1.4rem;
   border-radius: 999px;
-  border: 1px solid rgba(255, 255, 255, 0.16);
-  color: var(--text-primary);
+  font-size: 0.88rem;
+  font-weight: 600;
   text-decoration: none;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #fff;
   background: rgba(255, 255, 255, 0.06);
-  transition: all 0.25s ease;
+  transition: all 0.2s;
 }
 
 .LandingHeaderButton.primary {
-  background: rgba(255, 255, 255, 0.14);
+  background: #4f46e5;
+  border-color: #4f46e5;
 }
 
 .LandingHeaderButton:hover {
   transform: translateY(-2px);
-  background: rgba(255, 255, 255, 0.12);
+  background: #4f46e5;
+  border-color: #4f46e5;
 }
 
-.LandingHero {
-  padding: 5rem 0 3rem;
-}
-
-.LandingHeroContent {
-  display: grid;
-  grid-template-columns: 1.3fr 0.9fr;
-  gap: 2rem;
-  align-items: center;
-}
-
-.LandingHeroCopy {
-  max-width: 640px;
-}
-
-.LandingBadge {
-  display: inline-block;
-  margin-bottom: 1.5rem;
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  padding: 0.75rem 1.25rem;
-  border-radius: 999px;
-  font-size: 0.85rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--text-secondary);
-}
-
-.LandingHeroCopy h1 {
-  font-size: clamp(2.75rem, 5vw, 4.5rem);
-  line-height: 1.05;
-  margin-bottom: 1.5rem;
-}
-
-.LandingHeroCopy p {
-  max-width: 520px;
-  font-size: 1.05rem;
-  line-height: 1.8;
-  color: var(--text-secondary);
-  margin-bottom: 2rem;
-}
-
-.LandingActions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-}
-
+/* ── Buttons ────────────────────────────────────────────── */
 .LandingButton {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 1rem 2rem;
+  padding: 0.95rem 2rem;
   border-radius: 999px;
   font-weight: 700;
-  letter-spacing: 0.04em;
-  min-width: 160px;
-  transition: all 0.25s ease;
+  font-size: 0.92rem;
+  letter-spacing: 0.03em;
   text-decoration: none;
+  transition: all 0.25s ease;
+  border: none;
+  cursor: pointer;
 }
 
 .LandingButton.primary {
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  color: var(--text-primary);
+  background: linear-gradient(135deg, #4f46e5, #7c3aed);
+  color: #fff;
+  box-shadow: 0 8px 24px rgba(79, 70, 229, 0.4);
 }
 
-.LandingButton.secondary {
-  background: transparent;
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  color: var(--text-primary);
+.LandingButton.primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 32px rgba(79, 70, 229, 0.55);
+}
+
+.LandingButton.ghost {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #fff;
+}
+
+.LandingButton.ghost:hover {
+  background: rgba(255, 255, 255, 0.12);
+  transform: translateY(-2px);
 }
 
 .LandingButton.outline {
   background: transparent;
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  color: var(--text-primary);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #fff;
 }
 
-.LandingButton:hover {
-  transform: translateY(-2px);
-  background: rgba(255, 255, 255, 0.12);
+.LandingButton.outline:hover {
+  background: rgba(255, 255, 255, 0.08);
 }
 
-.LandingHeroStats {
-  display: grid;
-  gap: 1rem;
+/* ── Section title ──────────────────────────────────────── */
+.LandingSectionTitle {
+  margin-bottom: 2.5rem;
 }
-
-.LandingStatCard {
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 24px;
-  padding: 2rem;
-  backdrop-filter: blur(10px);
+.LandingSectionTitle.centered {
+  text-align: center;
 }
-
-.LandingStatCard h2 {
-  font-size: 2.25rem;
-  margin-bottom: 0.75rem;
-}
-
-.LandingStatCard p {
-  color: var(--text-secondary);
-  line-height: 1.7;
-}
-
-.LandingFeatures,
-.LandingMarkets,
-.LandingChatAwards,
-.LandingTestimonials,
-.LandingSponsors,
-.LandingPlans,
-.LandingContact {
-  padding: 4rem 0;
+.LandingSectionTitle.centered h2 {
+  margin: 0 auto;
 }
 
 .LandingSectionTitle p {
-  color: var(--text-secondary);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.28em;
   text-transform: uppercase;
-  letter-spacing: 0.22em;
-  font-size: 0.8rem;
+  color: #818cf8;
   margin-bottom: 0.75rem;
 }
 
 .LandingSectionTitle h2 {
-  font-size: clamp(2rem, 3vw, 3rem);
-  max-width: 700px;
-  line-height: 1.2;
+  font-size: clamp(1.8rem, 3vw, 2.75rem);
+  font-weight: 800;
+  line-height: 1.15;
+  max-width: 640px;
+  letter-spacing: -0.02em;
 }
 
-.LandingFeatureGrid,
-.LandingMarketsGrid,
-.LandingTestimonialGrid,
-.LandingPlanGrid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(220px, 1fr));
-  gap: 1.5rem;
-  margin-top: 2rem;
+/* ── HERO SLIDER ─────────────────────────────────────────── */
+.HeroSlider {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 600px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.LandingFeatureCard,
-.LandingMarketCard,
-.LandingTestimonialCard,
-.LandingPlanCard,
-.LandingChat,
-.LandingAwards,
-.LandingContactCard {
-  background: rgba(255, 255, 255, 0.05);
+/* Full-screen background video */
+.HeroBgVideo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+/* Dark gradient overlay — same feel as Unixswap */
+.HeroOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.78) 0%,
+    rgba(0, 0, 0, 0.45) 55%,
+    rgba(0, 0, 0, 0.15) 100%
+  );
+  z-index: 1;
+}
+
+/* Each slide stacks and fades */
+.HeroSlide {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.9s ease;
+  background: rgba(60, 20, 160, 0.18);
+}
+
+.HeroSlide.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* Slide inner — centred layout like Unixswap */
+.HeroSlideInner {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.HeroSlideCopy {
+  max-width: 680px;
+  animation: heroTextIn 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+  background: none;
+}
+
+@keyframes heroTextIn {
+  from {
+    opacity: 0;
+    transform: translateY(32px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.HeroEyebrow {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: #f59e0b;
+  margin-bottom: 1.25rem;
+  position: relative;
+  padding-left: 2rem;
+}
+
+.HeroEyebrow::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1.25rem;
+  height: 2px;
+  background: #f59e0b;
+}
+
+.HeroSlideCopy h1 {
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  font-weight: 900;
+  line-height: 1.08;
+  letter-spacing: -0.025em;
+  color: #fff;
+  margin-bottom: 1.5rem;
+  text-shadow: 0 2px 24px rgba(0, 0, 0, 0.4);
+}
+
+.HeroSlideCopy p {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.7);
+  max-width: 520px;
+  margin-bottom: 2.5rem;
+}
+
+.HeroActions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.HeroCTA {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 2.5rem;
+  border-radius: 999px;
+  font-weight: 800;
+  font-size: 0.9rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    background 0.25s ease;
+}
+
+.HeroCTA.primary {
+  background: #f59e0b;
+  color: #0a0c14;
+  box-shadow: 0 8px 28px rgba(245, 158, 11, 0.45);
+}
+
+.HeroCTA.primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 40px rgba(245, 158, 11, 0.6);
+}
+
+.HeroCTA.outline {
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  color: #fff;
+}
+
+.HeroCTA.outline:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: #fff;
+  transform: translateY(-2px);
+}
+
+/* Arrows */
+.HeroArrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(8px);
+  transition: all 0.22s ease;
+}
+
+.HeroArrow svg {
+  width: 22px;
+  height: 22px;
+}
+.HeroArrow.left {
+  left: 2rem;
+}
+.HeroArrow.right {
+  right: 2rem;
+}
+
+.HeroArrow:hover {
+  background: rgba(245, 158, 11, 0.8);
+  border-color: #f59e0b;
+  transform: translateY(-50%) scale(1.08);
+}
+
+/* Dots */
+.HeroDots {
+  position: absolute;
+  bottom: 2.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 0.6rem;
+  z-index: 10;
+}
+
+.HeroDot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 0;
+}
+
+.HeroDot.active {
+  background: #f59e0b;
+  border-color: #f59e0b;
+  width: 30px;
+  border-radius: 5px;
+}
+
+/* Scroll mouse cue */
+.HeroScrollCue {
+  position: absolute;
+  bottom: 2.5rem;
+  right: 2.5rem;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.HeroScrollMouse {
+  width: 24px;
+  height: 38px;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  padding-top: 6px;
+}
+
+.HeroScrollWheel {
+  width: 3px;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 3px;
+  animation: scrollWheel 2s ease infinite;
+}
+
+@keyframes scrollWheel {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+}
+
+/* ── Ticker bar ──────────────────────────────────────────── */
+.HeroTickerBar {
+  background: #0d0f1c;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  overflow: hidden;
+  padding: 0.85rem 0;
+}
+
+.HeroTickerTrack {
+  display: flex;
+  gap: 3rem;
+  animation: tickerScroll 30s linear infinite;
+  width: max-content;
+}
+
+.HeroTickerBar:hover .HeroTickerTrack {
+  animation-play-state: paused;
+}
+
+@keyframes tickerScroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.TickerItem {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.TickerIconWrap {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
   border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.TickerItem img {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+  border-radius: 50%;
+}
+
+.TickerName {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #fff;
+}
+.TickerPrice {
+  font-size: 0.82rem;
+  color: rgba(255, 255, 255, 0.55);
+}
+.TickerChange {
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+.TickerChange.up {
+  color: #4ade80;
+}
+.TickerChange.down {
+  color: #f87171;
+}
+.TickerChange.flat {
+  color: rgba(255, 255, 255, 0.35);
+}
+
+/* Responsive */
+@media (max-width: 968px) {
+  .HeroSlideInner {
+    justify-content: center;
+    text-align: center;
+  }
+  .HeroSlideCopy {
+    max-width: 100%;
+  }
+  .HeroSlideCopy p {
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .HeroEyebrow {
+    padding-left: 0;
+  }
+  .HeroEyebrow::before {
+    display: none;
+  }
+  .HeroActions {
+    justify-content: center;
+  }
+  .HeroArrow {
+    display: none;
+  }
+  .HeroScrollCue {
+    display: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .HeroSlideCopy h1 {
+    font-size: 2.25rem;
+  }
+  .HeroCTA {
+    padding: 0.85rem 1.75rem;
+    font-size: 0.82rem;
+  }
+}
+
+/* ── Features ───────────────────────────────────────────── */
+.LandingFeatures {
+  padding: 6rem 0;
+  background: #ffffff;
+  position: relative;
+  overflow: hidden;
+}
+
+.LandingFeatures::before {
+  content: none;
+}
+
+.LandingFeatures .LandingSectionTitle p {
+  color: #5b21b6;
+}
+
+.LandingFeatures .LandingSectionTitle h2 {
+  color: #0f0a1e;
+}
+
+.LandingFeatureGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+  position: relative;
+  z-index: 1;
+}
+
+.LandingFeatureCard {
+  background: #f5f3ff;
+  border: 1px solid #e9d5ff;
+  border-radius: 20px;
   padding: 2rem;
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
 }
 
-.LandingFeatureCard h3,
-.LandingMarketCard h3 {
-  font-size: 1.2rem;
-  margin-bottom: 0.75rem;
+.LandingFeatureCard:hover {
+  transform: translateY(-5px);
+  border-color: #a78bfa;
+  box-shadow: 0 20px 48px rgba(109, 40, 217, 0.12);
+  background: #ede9fe;
 }
 
-.LandingFeatureCard p,
-.LandingMarketCard p,
-.LandingTestimonialCard p,
-.LandingPlanCard p,
-.LandingChat p {
-  color: var(--text-secondary);
+.FeatureIcon {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  display: inline-block;
+  animation: iconBob 3s ease-in-out infinite;
+}
+
+@keyframes iconBob {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+.LandingFeatureCard h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 0.6rem;
+  color: #1e1035;
+}
+
+.LandingFeatureCard p {
+  font-size: 0.88rem;
+  color: rgba(30, 16, 53, 0.6);
   line-height: 1.7;
 }
 
+/* ── Markets ────────────────────────────────────────────── */
+.LandingMarkets {
+  padding: 6rem 0;
+  background: #ffffff;
+}
+
+.LandingMarkets .LandingSectionTitle p {
+  color: #5b21b6;
+}
+
+.LandingMarkets .LandingSectionTitle h2 {
+  color: #0f0a1e;
+}
+
 .LandingMarketsGrid {
-  margin-top: 2rem;
-}
-
-.LandingChatAwards {
   display: grid;
-  grid-template-columns: 1.2fr 0.8fr;
-  gap: 1.5rem;
-  align-items: stretch;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
+  margin-top: 0;
 }
 
-.LandingChat h2 {
+.LandingMarketCard {
+  background: #f5f3ff;
+  border: 1px solid #e9d5ff;
+  border-radius: 20px;
+  padding: 1.75rem;
+  transition: all 0.25s ease;
+  cursor: pointer;
+}
+
+.LandingMarketCard:hover {
+  transform: translateY(-4px);
+  background: #ede9fe;
+  border-color: #a78bfa;
+  box-shadow: 0 20px 48px rgba(109, 40, 217, 0.12);
+}
+
+.MarketIcon {
   font-size: 2rem;
-  margin-bottom: 1rem;
+  margin-bottom: 0.85rem;
 }
 
-.LandingChat p {
-  margin-bottom: 1.5rem;
-}
-
-.LandingAwards {
-  display: grid;
-  gap: 1rem;
-}
-
-.LandingAwards span {
-  display: inline-block;
-  color: var(--text-secondary);
-  text-transform: uppercase;
-  letter-spacing: 0.18em;
-  font-size: 0.8rem;
+.LandingMarketCard h3 {
+  font-size: 1rem;
+  font-weight: 700;
   margin-bottom: 0.5rem;
+  color: #0f0a1e;
 }
 
-.LandingAwards h3 {
-  font-size: 1.5rem;
-  margin-bottom: 0.75rem;
+.LandingMarketCard p {
+  font-size: 0.82rem;
+  color: rgba(15, 10, 30, 0.55);
+  line-height: 1.6;
 }
 
-.LandingTestimonialCard strong {
-  color: var(--text-primary);
+/* ── How It Works ───────────────────────────────────────── */
+.HowItWorks {
+  padding: 6rem 0;
 }
 
-.LandingSponsorGrid {
+.HowGrid {
   display: grid;
-  grid-template-columns: repeat(5, minmax(120px, 1fr));
-  gap: 1rem;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+  position: relative;
+}
+
+.HowGrid::before {
+  content: "";
+  position: absolute;
+  top: 28px;
+  left: calc(100% / 6);
+  right: calc(100% / 6);
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(79, 70, 229, 0.4),
+    transparent
+  );
+  pointer-events: none;
+}
+
+.HowCard {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 20px;
+  padding: 2rem;
+  text-align: center;
+  transition: transform 0.25s ease;
+}
+
+.HowCard:hover {
+  transform: translateY(-4px);
+}
+
+.HowStep {
+  display: inline-flex;
   align-items: center;
-  margin-top: 1.75rem;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #4f46e5, #7c3aed);
+  font-size: 1rem;
+  font-weight: 900;
+  color: #fff;
+  margin-bottom: 1.25rem;
+  box-shadow: 0 8px 24px rgba(79, 70, 229, 0.4);
 }
 
-.LandingSponsorGrid span {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 14px;
-  padding: 1rem;
-  text-align: center;
-  color: var(--text-secondary);
-  font-size: 0.95rem;
+.HowCard h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 0.6rem;
 }
 
-.LandingPlanCard {
-  text-align: center;
+.HowCard p {
+  font-size: 0.88rem;
+  color: rgba(255, 255, 255, 0.5);
+  line-height: 1.7;
 }
 
-.LandingPlanCard.featured {
-  background: rgba(255, 255, 255, 0.12);
-  border-color: rgba(255, 255, 255, 0.18);
-}
-
-/* ─── Investment Plans Section ─────────────────────────────── */
+/* ── Investment Plans ───────────────────────────────────── */
 .InvPlansSection {
   padding: 6rem 0;
-  background: linear-gradient(160deg, #0b0e14 0%, #111520 60%, #0d1018 100%);
+  background: #0a0c14;
   position: relative;
   overflow: hidden;
 }
@@ -384,11 +812,11 @@
   top: -200px;
   left: 50%;
   transform: translateX(-50%);
-  width: 800px;
-  height: 800px;
+  width: 900px;
+  height: 900px;
   background: radial-gradient(
     circle,
-    rgba(201, 168, 76, 0.06) 0%,
+    rgba(79, 70, 229, 0.07) 0%,
     transparent 70%
   );
   pointer-events: none;
@@ -401,8 +829,8 @@
 
 .InvPlansEyebrow {
   display: inline-block;
-  font-size: 0.75rem;
-  font-weight: 600;
+  font-size: 0.72rem;
+  font-weight: 700;
   letter-spacing: 0.28em;
   text-transform: uppercase;
   color: #c9a84c;
@@ -410,22 +838,21 @@
 }
 
 .InvPlansTitle {
-  font-size: clamp(2rem, 3.5vw, 3rem);
-  font-weight: 800;
+  font-size: clamp(2rem, 3.5vw, 2.75rem);
+  font-weight: 900;
   color: #fff;
   margin: 0 0 1rem;
   letter-spacing: -0.02em;
 }
 
 .InvPlansSubtitle {
-  font-size: 1rem;
-  color: rgba(255, 255, 255, 0.5);
-  max-width: 520px;
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.45);
+  max-width: 500px;
   margin: 0 auto;
   line-height: 1.7;
 }
 
-/* Grid layouts */
 .InvPlanGrid {
   display: grid;
   gap: 1.25rem;
@@ -435,22 +862,19 @@
 .InvPlanGrid.four {
   grid-template-columns: repeat(4, 1fr);
 }
-
 .InvPlanGrid.two {
   grid-template-columns: repeat(2, minmax(0, 420px));
   justify-content: center;
 }
 
-/* Card base */
 .InvPlanCard {
   position: relative;
   background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.07);
   border-radius: 20px;
   padding: 2rem 1.75rem;
   display: flex;
   flex-direction: column;
-  gap: 0;
   transition:
     transform 0.25s ease,
     border-color 0.25s ease,
@@ -471,8 +895,8 @@
 
 .InvPlanCard:hover {
   transform: translateY(-4px);
-  border-color: rgba(255, 255, 255, 0.16);
-  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.3);
+  border-color: rgba(255, 255, 255, 0.14);
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.4);
 }
 
 .InvPlanCard.featured {
@@ -480,7 +904,7 @@
   border-color: rgba(201, 168, 76, 0.3);
   box-shadow:
     0 0 0 1px rgba(201, 168, 76, 0.15),
-    0 16px 48px rgba(0, 0, 0, 0.25);
+    0 16px 48px rgba(0, 0, 0, 0.3);
 }
 
 .InvPlanCard.large {
@@ -492,8 +916,8 @@
   top: 1.25rem;
   right: 1.25rem;
   background: #c9a84c;
-  color: #0b0e14;
-  font-size: 0.7rem;
+  color: #0a0c14;
+  font-size: 0.68rem;
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -501,35 +925,32 @@
   border-radius: 999px;
 }
 
-/* Card top section */
 .InvPlanTop {
   margin-bottom: 1.25rem;
 }
 
 .InvPlanTier {
   display: inline-block;
-  font-size: 0.7rem;
-  font-weight: 600;
+  font-size: 0.68rem;
+  font-weight: 700;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--plan-accent, #6c8ebf);
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.4rem;
 }
 
 .InvPlanName {
-  font-size: 1.2rem;
-  font-weight: 700;
+  font-size: 1.15rem;
+  font-weight: 800;
   color: #fff;
-  margin: 0 0 0.75rem;
-  letter-spacing: -0.01em;
+  margin: 0 0 0.6rem;
 }
 
 .InvPlanRange {
-  font-size: 1rem;
+  font-size: 0.95rem;
   font-weight: 700;
-  color: #fff;
+  color: rgba(255, 255, 255, 0.85);
   margin-bottom: 0.6rem;
-  letter-spacing: -0.01em;
 }
 
 .InvPlanRoiRow {
@@ -537,33 +958,31 @@
   align-items: center;
   gap: 0.4rem;
   background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 999px;
-  padding: 0.3rem 0.75rem;
+  padding: 0.25rem 0.7rem;
 }
 
 .InvPlanRoiLabel {
-  font-size: 0.7rem;
-  font-weight: 600;
+  font-size: 0.65rem;
+  font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.45);
+  color: rgba(255, 255, 255, 0.4);
 }
 
 .InvPlanRoiValue {
-  font-size: 0.85rem;
-  font-weight: 700;
-  color: #4caf8a;
+  font-size: 0.82rem;
+  font-weight: 800;
+  color: #4ade80;
 }
 
-/* Divider */
 .InvPlanDivider {
   height: 1px;
-  background: rgba(255, 255, 255, 0.07);
+  background: rgba(255, 255, 255, 0.06);
   margin-bottom: 1.25rem;
 }
 
-/* Features list */
 .InvPlanFeatures {
   list-style: none;
   padding: 0;
@@ -571,154 +990,307 @@
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 0.7rem;
+  gap: 0.65rem;
 }
 
 .InvPlanFeatures li {
   display: flex;
   align-items: flex-start;
-  gap: 0.6rem;
-  font-size: 0.83rem;
-  color: rgba(255, 255, 255, 0.6);
+  gap: 0.5rem;
+  font-size: 0.82rem;
+  color: rgba(255, 255, 255, 0.55);
   line-height: 1.55;
 }
 
 .InvCheckIcon {
-  width: 16px;
-  height: 16px;
+  width: 15px;
+  height: 15px;
   flex-shrink: 0;
   color: var(--plan-accent, #6c8ebf);
   margin-top: 0.1rem;
 }
 
-/* CTA button */
 .InvPlanButton {
   display: block;
   width: 100%;
   text-align: center;
-  padding: 0.85rem 1rem;
+  padding: 0.8rem 1rem;
   border-radius: 12px;
   background: var(--plan-accent, #6c8ebf);
   color: #fff;
   font-weight: 700;
-  font-size: 0.82rem;
+  font-size: 0.8rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   text-decoration: none;
   margin-top: auto;
   transition:
-    opacity 0.2s ease,
-    transform 0.2s ease;
+    opacity 0.2s,
+    transform 0.2s;
   border: none;
   cursor: pointer;
 }
 
 .InvPlanButton:hover {
-  opacity: 0.88;
+  opacity: 0.85;
   transform: translateY(-1px);
 }
-
 .InvPlanCard.featured .InvPlanButton {
   background: #c9a84c;
-  color: #0b0e14;
+  color: #0a0c14;
 }
 
-/* Responsive */
+/* ── Testimonials ───────────────────────────────────────── */
+.LandingTestimonials {
+  padding: 6rem 0;
+}
+
+.LandingTestimonialGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+}
+
+.LandingTestimonialCard {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 20px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  transition: transform 0.25s ease;
+}
+
+.LandingTestimonialCard:hover {
+  transform: translateY(-4px);
+}
+
+.TestimonialStars {
+  font-size: 0.9rem;
+  letter-spacing: 0.1em;
+}
+
+.LandingTestimonialCard p {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.6);
+  line-height: 1.75;
+  flex: 1;
+}
+
+.TestimonialAuthor {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.TestimonialAvatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #4f46e5, #7c3aed);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 0.9rem;
+  flex-shrink: 0;
+}
+
+.TestimonialAuthor strong {
+  display: block;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.TestimonialAuthor span {
+  display: block;
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.4);
+  margin-top: 0.1rem;
+}
+
+/* ── Sponsors ────────────────────────────────────────────── */
+.LandingSponsors {
+  padding: 4rem 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.LandingSponsors > p {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.3);
+  text-align: center;
+  margin-bottom: 1.75rem;
+}
+
+.LandingSponsorGrid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1rem;
+}
+
+.LandingSponsorGrid span {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 14px;
+  padding: 1rem;
+  text-align: center;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: rgba(255, 255, 255, 0.35);
+  transition: all 0.25s ease;
+}
+
+.LandingSponsorGrid span:hover {
+  color: rgba(255, 255, 255, 0.8);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+/* ── CTA ─────────────────────────────────────────────────── */
+.LandingCTA {
+  padding: 6rem 0;
+}
+
+.LandingCTAInner {
+  position: relative;
+  text-align: center;
+  background: linear-gradient(
+    135deg,
+    rgba(79, 70, 229, 0.15),
+    rgba(124, 58, 237, 0.1)
+  );
+  border: 1px solid rgba(79, 70, 229, 0.25);
+  border-radius: 28px;
+  padding: 4rem 2rem;
+  overflow: hidden;
+}
+
+.CTABlob {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(79, 70, 229, 0.2) 0%,
+    transparent 70%
+  );
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  animation: blobFloat 7s ease-in-out infinite;
+}
+
+.CTAEyebrow {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: #818cf8;
+  margin-bottom: 1.25rem;
+}
+
+.LandingCTAInner h2 {
+  font-size: clamp(2rem, 4vw, 3.25rem);
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  margin-bottom: 1rem;
+}
+
+.LandingCTAInner p {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.5);
+  margin-bottom: 2.5rem;
+  max-width: 440px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.CTAActions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ── Responsive ─────────────────────────────────────────── */
 @media (max-width: 1100px) {
   .InvPlanGrid.four {
     grid-template-columns: repeat(2, 1fr);
   }
+  .LandingMarketsGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 968px) {
+  .LandingHeroContent {
+    grid-template-columns: 1fr;
+  }
+  .HeroImagePanel {
+    display: none;
+  }
+  .HeroStatsBar {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .LandingFeatureGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .LandingMarketsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .HowGrid {
+    grid-template-columns: 1fr;
+  }
+  .HowGrid::before {
+    display: none;
+  }
+  .LandingTestimonialGrid {
+    grid-template-columns: 1fr;
+  }
+  .LandingSponsorGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .LandingHeader {
+    flex-wrap: wrap;
+  }
+  .LandingNav {
+    display: none;
+  }
 }
 
 @media (max-width: 640px) {
+  .LandingHero {
+    padding: 3rem 0 0;
+  }
+  .LandingHeroCopy h1 {
+    font-size: 2.25rem;
+  }
+  .HeroStatsBar {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .LandingFeatureGrid {
+    grid-template-columns: 1fr;
+  }
   .InvPlanGrid.four,
   .InvPlanGrid.two {
     grid-template-columns: 1fr;
   }
-}
-
-.LandingContactCard {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-}
-
-.LandingContactCard span {
-  display: inline-block;
-  color: var(--text-secondary);
-  text-transform: uppercase;
-  letter-spacing: 0.22em;
-  margin-bottom: 0.75rem;
-}
-
-.LandingContactCard h2 {
-  max-width: 640px;
-}
-
-.LandingFooter {
-  padding: 2rem 0;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-.LandingFooterContent {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 1rem;
-  flex-wrap: wrap;
-}
-
-.LandingFooterLinks {
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
-}
-
-.LandingFooterLinks a {
-  color: var(--text-secondary);
-  text-decoration: none;
-}
-
-@media (max-width: 968px) {
-  .LandingHeader,
-  .LandingHeroContent,
-  .LandingFeatureGrid,
-  .LandingMarketsGrid,
-  .LandingChatAwards,
-  .LandingTestimonialGrid,
-  .LandingSponsorGrid,
-  .LandingPlanGrid {
+  .LandingMarketsGrid {
     grid-template-columns: 1fr;
   }
-
-  .LandingNav {
-    justify-content: flex-start;
+  .LandingSponsorGrid {
+    grid-template-columns: repeat(2, 1fr);
   }
-
-  .LandingHero {
-    padding: 3rem 0 2rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .LandingHeader {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-}
-
-@media (max-width: 640px) {
-  .LandingHeroContent {
-    gap: 1.5rem;
-  }
-
-  .LandingHeroCopy h1 {
-    font-size: 2.5rem;
-  }
-
   .LandingHeaderActions {
     width: 100%;
-    justify-content: flex-start;
   }
 }
