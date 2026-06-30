@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import LandingHeader from "../../Components/LandingHeader";
 import Footer from "../../Components/Footer";
 import ActivityToast from "../../Components/ActivityToast";
-import CryptVideo from "../../assets/crypt.mp4";
+import LiveBackgroundChart from "../../Components/LiveBackgroundChart";
 import "./Landing.css";
 
 const SLIDES = [
@@ -211,15 +211,8 @@ const Landing = () => {
       <main>
         {/* ══ HERO — full-screen video background ══════════ */}
         <section className="HeroSlider">
-          {/* Background video */}
-          <video
-            className="HeroBgVideo"
-            src={CryptVideo}
-            autoPlay
-            muted
-            loop
-            playsInline
-          />
+          {/* Background live chart (falls back to video on browsers blocking websockets) */}
+          <LiveBackgroundChart symbol="BTCUSDT" />
           {/* Gradient overlay */}
           <div className="HeroOverlay" />
 
@@ -322,40 +315,40 @@ const Landing = () => {
         <section className="LandingFeatures" id="trading">
           <div className="container">
             <div className="LandingSectionTitle">
-              <p>Why choose us</p>
-              <h2>Built to trade confidently in every market.</h2>
+              <p>Why invest with us</p>
+              <h2>Built to grow your wealth in every market.</h2>
             </div>
             <div className="LandingFeatureGrid">
               {[
                 {
-                  icon: "⚡",
-                  title: "Lightning Execution",
-                  desc: "Execute trades in milliseconds with our low-latency infrastructure.",
+                  icon: "📈",
+                  title: "Up to 550% ROI",
+                  desc: "Our investment plans deliver consistent high returns, with ROI up to 550% across all tiers.",
                 },
                 {
-                  icon: "📊",
-                  title: "Advanced Analytics",
-                  desc: "Track positions and manage risk with real-time actionable insights.",
+                  icon: "🔒",
+                  title: "Capital Protection",
+                  desc: "Bank-grade SSL encryption and regulated operations keep your funds fully secured.",
                 },
                 {
-                  icon: "🛡️",
-                  title: "Secure & Regulated",
-                  desc: "Bank-grade SSL encryption and full regulatory compliance.",
+                  icon: "💼",
+                  title: "Managed Portfolios",
+                  desc: "Expert fund managers handle your portfolio across crypto, forex, metals and real estate.",
                 },
                 {
-                  icon: "💰",
-                  title: "High ROI Plans",
-                  desc: "Investment plans up to 550% ROI with transparent performance tracking.",
+                  icon: "💸",
+                  title: "Fast Withdrawals",
+                  desc: "Withdraw your profits within 24–48 hours via crypto or bank transfer, hassle-free.",
                 },
                 {
-                  icon: "🌐",
-                  title: "120+ Markets",
-                  desc: "Crypto, forex, metals, real estate and more from one platform.",
+                  icon: "🌍",
+                  title: "Global Asset Classes",
+                  desc: "Diversify across 120+ markets including crypto, commodities, forex and real estate.",
                 },
                 {
                   icon: "🤝",
-                  title: "Referral Rewards",
-                  desc: "Earn passive income by inviting traders to the platform.",
+                  title: "Referral Bonuses",
+                  desc: "Earn passive income by referring friends — get rewarded for every investor you bring in.",
                 },
               ].map((f) => (
                 <article className="LandingFeatureCard" key={f.title}>
@@ -368,30 +361,126 @@ const Landing = () => {
           </div>
         </section>
 
-        {/* ══ MARKETS ═════════════════════════════════════ */}
+        {/* ══ APP PREVIEW ══════════════════════════════════ */}
         <section className="LandingMarkets" id="markets">
           <div className="container">
-            <div className="LandingSectionTitle">
-              <p>Market access</p>
-              <h2>Trade the widest range of asset classes.</h2>
-            </div>
-            <div className="LandingMarketsGrid">
-              {MARKETS.slice(0, 4).map((m) => (
-                <div className="LandingMarketCard" key={m.name}>
-                  <div className="MarketIcon">{m.icon}</div>
-                  <h3>{m.name}</h3>
-                  <p>{m.desc}</p>
+            <div className="AppPreviewGrid">
+              {/* Left — copy */}
+              <div className="AppPreviewCopy">
+                <span className="AppPreviewEyebrow">
+                  Your Investment Dashboard
+                </span>
+                <h2>
+                  Reliable, stronger, and better than your average investment
+                  platform.
+                </h2>
+                <p>
+                  We are committed to providing all our investors with
+                  exceptional service and the highest returns in the market.
+                </p>
+                <p>
+                  DeFi Digital Assets is an international online investment
+                  platform actively operating across Crypto, Forex, Metals and
+                  Real Estate markets. With our advanced web-based platform, you
+                  can invest across the largest asset classes in the industry —
+                  with transparent commissions and up to 550% ROI.
+                </p>
+                <div className="AppPreviewStats">
+                  <div className="AppPreviewStat">
+                    <span className="AppPreviewStatNum">550%</span>
+                    <span className="AppPreviewStatLabel">Max ROI</span>
+                  </div>
+                  <div className="AppPreviewStat">
+                    <span className="AppPreviewStatNum">50K+</span>
+                    <span className="AppPreviewStatLabel">Investors</span>
+                  </div>
+                  <div className="AppPreviewStat">
+                    <span className="AppPreviewStatNum">24/7</span>
+                    <span className="AppPreviewStatLabel">Support</span>
+                  </div>
                 </div>
-              ))}
-            </div>
-            <div className="LandingMarketsGrid three">
-              {MARKETS.slice(4).map((m) => (
-                <div className="LandingMarketCard" key={m.name}>
-                  <div className="MarketIcon">{m.icon}</div>
-                  <h3>{m.name}</h3>
-                  <p>{m.desc}</p>
+              </div>
+
+              {/* Right — phone mockup with dashboard UI */}
+              <div className="AppPreviewPhoneWrap">
+                <div className="PhoneMockup">
+                  <div className="PhoneNotch" />
+                  <div className="PhoneScreen">
+                    <div className="MiniDash">
+                      {/* Header */}
+                      <div className="MiniDashHeader">
+                        <div className="MiniDashLogo">DeFi</div>
+                        <div className="MiniDashAvatar" />
+                      </div>
+                      {/* Balance */}
+                      <div className="MiniDashBalance">
+                        <p className="MiniDashBalLabel">Portfolio value</p>
+                        <h3 className="MiniDashBalAmount">$145,609,999.98</h3>
+                        <span className="MiniDashBalChange">▲ +1.25%</span>
+                        <div className="MiniDashChartBar">
+                          {[30, 45, 35, 60, 50, 75, 55, 85, 65, 80, 60, 90].map(
+                            (h, i) => (
+                              <div
+                                key={i}
+                                className="MiniDashBar"
+                                style={{
+                                  height: `${h}%`,
+                                  background: h > 65 ? "#4ade80" : "#6366f1",
+                                }}
+                              />
+                            ),
+                          )}
+                        </div>
+                      </div>
+                      {/* Wallets */}
+                      <div className="MiniDashSection">
+                        <p className="MiniDashSectionTitle">Wallets</p>
+                        {[
+                          {
+                            name: "Bitcoin",
+                            bal: "1.04 BTC",
+                            chg: "+4.98%",
+                            color: "#f59e0b",
+                          },
+                          {
+                            name: "Ethereum",
+                            bal: "85,999.9 ETH",
+                            chg: "+2.05%",
+                            color: "#34d399",
+                          },
+                          {
+                            name: "USDT",
+                            bal: "$170,000.00",
+                            chg: "+0.01%",
+                            color: "#818cf8",
+                          },
+                        ].map((w) => (
+                          <div className="MiniDashWalletRow" key={w.name}>
+                            <div
+                              className="MiniDashWalletDot"
+                              style={{ background: w.color }}
+                            />
+                            <div className="MiniDashWalletInfo">
+                              <span className="MiniDashWalletName">
+                                {w.name}
+                              </span>
+                              <span className="MiniDashWalletBal">{w.bal}</span>
+                            </div>
+                            <span className="MiniDashWalletChg">{w.chg}</span>
+                          </div>
+                        ))}
+                      </div>
+                      {/* Actions */}
+                      <div className="MiniDashActions">
+                        <button className="MiniDashBtn deposit">Deposit</button>
+                        <button className="MiniDashBtn withdraw">
+                          Withdraw
+                        </button>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-              ))}
+              </div>
             </div>
           </div>
         </section>

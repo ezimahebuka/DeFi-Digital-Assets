@@ -601,7 +601,7 @@
 /* ── Features ───────────────────────────────────────────── */
 .LandingFeatures {
   padding: 6rem 0;
-  background: #ffffff;
+  background: #07090f;
   position: relative;
   overflow: hidden;
 }
@@ -611,11 +611,11 @@
 }
 
 .LandingFeatures .LandingSectionTitle p {
-  color: #5b21b6;
+  color: #818cf8;
 }
 
 .LandingFeatures .LandingSectionTitle h2 {
-  color: #0f0a1e;
+  color: #fff;
 }
 
 .LandingFeatureGrid {
@@ -627,8 +627,8 @@
 }
 
 .LandingFeatureCard {
-  background: #f5f3ff;
-  border: 1px solid #e9d5ff;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.07);
   border-radius: 20px;
   padding: 2rem;
   transition:
@@ -639,9 +639,9 @@
 
 .LandingFeatureCard:hover {
   transform: translateY(-5px);
-  border-color: #a78bfa;
-  box-shadow: 0 20px 48px rgba(109, 40, 217, 0.12);
-  background: #ede9fe;
+  border-color: rgba(99, 102, 241, 0.4);
+  box-shadow: 0 20px 48px rgba(99, 102, 241, 0.15);
+  background: rgba(99, 102, 241, 0.08);
 }
 
 .FeatureIcon {
@@ -665,27 +665,471 @@
   font-size: 1.1rem;
   font-weight: 700;
   margin-bottom: 0.6rem;
-  color: #1e1035;
+  color: #fff;
 }
 
 .LandingFeatureCard p {
   font-size: 0.88rem;
-  color: rgba(30, 16, 53, 0.6);
+  color: rgba(255, 255, 255, 0.5);
   line-height: 1.7;
 }
 
-/* ── Markets ────────────────────────────────────────────── */
+/* ── App Preview (replaces Markets) ─────────────────────── */
 .LandingMarkets {
   padding: 6rem 0;
-  background: #0f172a;
+  background: #07090f;
+  overflow: hidden;
 }
 
-.LandingMarkets .LandingSectionTitle p {
+/* Left copy */
+.AppPreviewEyebrow {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
   color: #818cf8;
+  margin-bottom: 1.25rem;
 }
 
-.LandingMarkets .LandingSectionTitle h2 {
+.AppPreviewCopy h2 {
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  font-weight: 800;
   color: #fff;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  margin-bottom: 1.25rem;
+}
+
+.AppPreviewCopy p {
+  font-size: 0.92rem;
+  color: rgba(255, 255, 255, 0.5);
+  line-height: 1.8;
+  margin-bottom: 1rem;
+}
+
+.AppPreviewStats {
+  display: flex;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.AppPreviewStat {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.AppPreviewStatNum {
+  font-size: 1.75rem;
+  font-weight: 900;
+  color: #fff;
+  letter-spacing: -0.03em;
+}
+
+.AppPreviewStatLabel {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+/* Right phones */
+.AppPreviewPhones {
+  position: relative;
+  height: 520px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.PhoneMockup {
+  position: absolute;
+  width: 220px;
+  border-radius: 36px;
+  background: #0f1219;
+  border: 2px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 40px 80px rgba(0, 0, 0, 0.7);
+  overflow: hidden;
+}
+
+.PhoneMockup.back {
+  transform: rotate(-8deg) translateX(-60px) translateY(20px);
+  z-index: 1;
+  opacity: 0.85;
+}
+
+.PhoneMockup.front {
+  transform: rotate(4deg) translateX(40px) translateY(-10px);
+  z-index: 2;
+}
+
+.PhoneScreen {
+  padding: 1rem 0.85rem;
+  min-height: 420px;
+}
+
+/* Mini dashboard inside phone */
+.MiniDash {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  height: 100%;
+}
+
+.MiniDashHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.MiniDashLogo {
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: #818cf8;
+  letter-spacing: 0.08em;
+}
+
+.MiniDashAvatar {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #4f46e5, #7c3aed);
+}
+
+/* Balance card */
+.MiniDashBalance {
+  background: linear-gradient(135deg, #4f46e5, #7c3aed);
+  border-radius: 16px;
+  padding: 0.85rem 1rem;
+}
+
+.MiniDashBalLabel {
+  font-size: 0.6rem;
+  color: rgba(255, 255, 255, 0.65);
+  margin-bottom: 0.25rem;
+}
+
+.MiniDashBalAmount {
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 0.2rem;
+}
+
+.MiniDashBalChange {
+  font-size: 0.65rem;
+  font-weight: 700;
+}
+
+.MiniDashBalChange.up {
+  color: #4ade80;
+}
+
+/* Bar chart */
+.MiniDashChartBar {
+  display: flex;
+  align-items: flex-end;
+  gap: 3px;
+  height: 60px;
+  padding: 0 0.25rem;
+}
+
+.MiniDashBar {
+  flex: 1;
+  border-radius: 3px 3px 0 0;
+  min-height: 4px;
+}
+
+/* Wallets */
+.MiniDashWalletTitle {
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.4);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.MiniDashWalletRow {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.MiniDashWalletDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.MiniDashWalletInfo {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.MiniDashWalletName {
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.MiniDashWalletBal {
+  font-size: 0.55rem;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.MiniDashWalletChg {
+  font-size: 0.6rem;
+  font-weight: 700;
+}
+
+.MiniDashWalletChg.up {
+  color: #4ade80;
+}
+
+/* Action buttons */
+.MiniDashActions {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: auto;
+}
+
+.MiniDashBtn {
+  flex: 1;
+  padding: 0.5rem;
+  border-radius: 10px;
+  border: none;
+  font-size: 0.65rem;
+  font-weight: 700;
+  cursor: default;
+}
+
+.MiniDashBtn.deposit {
+  background: linear-gradient(135deg, #4f46e5, #7c3aed);
+  color: #fff;
+}
+
+.MiniDashBtn.withdraw {
+  background: rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+/* ── App Preview — phone mockup right panel ─────────────── */
+.AppPreviewGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  min-height: 600px;
+}
+
+.AppPreviewPhoneWrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.PhoneMockup {
+  width: 260px;
+  border-radius: 44px;
+  background: #0a0c14;
+  border: 6px solid rgba(255, 255, 255, 0.15);
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.06),
+    0 40px 80px rgba(0, 0, 0, 0.7),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.04);
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+}
+
+.PhoneNotch {
+  width: 80px;
+  height: 20px;
+  background: #0a0c14;
+  border-radius: 0 0 14px 14px;
+  margin: 0 auto;
+  border: 3px solid rgba(255, 255, 255, 0.1);
+  border-top: none;
+}
+
+.PhoneScreen {
+  padding: 0.75rem 1rem 1.25rem;
+  background: #0f1219;
+  min-height: 520px;
+}
+
+.MiniDash {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.MiniDashHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.MiniDashLogo {
+  font-size: 0.7rem;
+  font-weight: 900;
+  color: #818cf8;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.MiniDashAvatar {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #4f46e5, #7c3aed);
+}
+
+.MiniDashBalance {
+  background: linear-gradient(135deg, #4f46e5, #7c3aed);
+  border-radius: 16px;
+  padding: 0.9rem 1rem;
+}
+
+.MiniDashBalLabel {
+  font-size: 0.58rem;
+  color: rgba(255, 255, 255, 0.65);
+  margin-bottom: 0.2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.MiniDashBalAmount {
+  font-size: 1rem;
+  font-weight: 900;
+  color: #fff;
+  margin-bottom: 0.25rem;
+  letter-spacing: -0.02em;
+}
+
+.MiniDashBalChange {
+  display: inline-block;
+  font-size: 0.6rem;
+  font-weight: 700;
+  color: #4ade80;
+  background: rgba(74, 222, 128, 0.15);
+  border: 1px solid rgba(74, 222, 128, 0.25);
+  border-radius: 999px;
+  padding: 0.15rem 0.5rem;
+  margin-bottom: 0.65rem;
+}
+
+.MiniDashChartBar {
+  display: flex;
+  align-items: flex-end;
+  gap: 3px;
+  height: 40px;
+}
+
+.MiniDashBar {
+  flex: 1;
+  border-radius: 2px 2px 0 0;
+  min-height: 3px;
+}
+
+.MiniDashSection {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 14px;
+  padding: 0.75rem;
+}
+
+.MiniDashSectionTitle {
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.35);
+  margin-bottom: 0.5rem;
+}
+
+.MiniDashWalletRow {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.MiniDashWalletRow:last-child {
+  border-bottom: none;
+}
+
+.MiniDashWalletDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.MiniDashWalletInfo {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.MiniDashWalletName {
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.MiniDashWalletBal {
+  font-size: 0.55rem;
+  color: rgba(255, 255, 255, 0.38);
+}
+
+.MiniDashWalletChg {
+  font-size: 0.6rem;
+  font-weight: 700;
+  color: #4ade80;
+}
+
+.MiniDashActions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.MiniDashBtn {
+  flex: 1;
+  padding: 0.55rem 0;
+  border-radius: 10px;
+  border: none;
+  font-size: 0.62rem;
+  font-weight: 700;
+  cursor: default;
+  letter-spacing: 0.04em;
+}
+
+.MiniDashBtn.deposit {
+  background: linear-gradient(135deg, #4f46e5, #7c3aed);
+  color: #fff;
+}
+
+.MiniDashBtn.withdraw {
+  background: rgba(255, 255, 255, 0.07);
+  color: rgba(255, 255, 255, 0.65);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+@media (max-width: 968px) {
+  .AppPreviewGrid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
 }
 
 .LandingMarketsGrid {
@@ -739,15 +1183,15 @@
 /* ── How It Works ───────────────────────────────────────── */
 .HowItWorks {
   padding: 6rem 0;
-  background: #ffffff;
+  background: #07090f;
 }
 
 .HowItWorks .LandingSectionTitle p {
-  color: #5b21b6;
+  color: #818cf8;
 }
 
 .HowItWorks .LandingSectionTitle h2 {
-  color: #0f0a1e;
+  color: #fff;
 }
 
 .HowGrid {
@@ -775,8 +1219,8 @@
 }
 
 .HowCard {
-  background: #f5f3ff;
-  border: 1px solid #e9d5ff;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.07);
   border-radius: 20px;
   padding: 2rem;
   text-align: center;
@@ -788,9 +1232,9 @@
 
 .HowCard:hover {
   transform: translateY(-4px);
-  border-color: #a78bfa;
-  box-shadow: 0 20px 48px rgba(109, 40, 217, 0.12);
-  background: #ede9fe;
+  border-color: rgba(99, 102, 241, 0.4);
+  box-shadow: 0 20px 48px rgba(99, 102, 241, 0.15);
+  background: rgba(99, 102, 241, 0.08);
 }
 
 .HowStep {
@@ -812,19 +1256,19 @@
   font-size: 1.1rem;
   font-weight: 700;
   margin-bottom: 0.6rem;
-  color: #0f0a1e;
+  color: #fff;
 }
 
 .HowCard p {
   font-size: 0.88rem;
-  color: rgba(15, 10, 30, 0.55);
+  color: rgba(255, 255, 255, 0.5);
   line-height: 1.7;
 }
 
 /* ── Investment Plans ───────────────────────────────────── */
 .InvPlansSection {
   padding: 6rem 0;
-  background: #0a0c14;
+  background: #07090f;
   position: relative;
   overflow: hidden;
 }
@@ -892,8 +1336,8 @@
 
 .InvPlanCard {
   position: relative;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.07);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 20px;
   padding: 2rem 1.75rem;
   display: flex;
@@ -918,8 +1362,9 @@
 
 .InvPlanCard:hover {
   transform: translateY(-4px);
-  border-color: rgba(255, 255, 255, 0.14);
-  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.4);
+  background: rgba(99, 102, 241, 0.12);
+  border-color: rgba(99, 102, 241, 0.4);
+  box-shadow: 0 24px 48px rgba(99, 102, 241, 0.15);
 }
 
 .InvPlanCard.featured {
@@ -1066,6 +1511,7 @@
 /* ── Testimonials ───────────────────────────────────────── */
 .LandingTestimonials {
   padding: 6rem 0;
+  background: #07090f;
 }
 
 .LandingTestimonialGrid {
@@ -1075,18 +1521,24 @@
 }
 
 .LandingTestimonialCard {
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.07);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 20px;
   padding: 2rem;
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  transition: transform 0.25s ease;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
 }
 
 .LandingTestimonialCard:hover {
   transform: translateY(-4px);
+  background: rgba(99, 102, 241, 0.12);
+  border-color: rgba(99, 102, 241, 0.4);
+  box-shadow: 0 20px 48px rgba(99, 102, 241, 0.15);
 }
 
 .TestimonialStars {
@@ -1137,6 +1589,7 @@
 /* ── Sponsors ────────────────────────────────────────────── */
 .LandingSponsors {
   padding: 4rem 0;
+  background: #07090f;
   border-top: 1px solid rgba(255, 255, 255, 0.06);
   border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 }
@@ -1159,7 +1612,7 @@
 
 .LandingSponsorGrid span {
   background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 14px;
   padding: 1rem;
   text-align: center;
@@ -1171,24 +1624,22 @@
 }
 
 .LandingSponsorGrid span:hover {
-  color: rgba(255, 255, 255, 0.8);
-  border-color: rgba(255, 255, 255, 0.15);
+  background: rgba(99, 102, 241, 0.12);
+  border-color: rgba(99, 102, 241, 0.4);
+  color: #fff;
 }
 
 /* ── CTA ─────────────────────────────────────────────────── */
 .LandingCTA {
   padding: 6rem 0;
+  background: #07090f;
 }
 
 .LandingCTAInner {
   position: relative;
   text-align: center;
-  background: linear-gradient(
-    135deg,
-    rgba(79, 70, 229, 0.15),
-    rgba(124, 58, 237, 0.1)
-  );
-  border: 1px solid rgba(79, 70, 229, 0.25);
+  background: rgba(99, 102, 241, 0.08);
+  border: 1px solid rgba(99, 102, 241, 0.25);
   border-radius: 28px;
   padding: 4rem 2rem;
   overflow: hidden;
@@ -1201,14 +1652,13 @@
   border-radius: 50%;
   background: radial-gradient(
     circle,
-    rgba(79, 70, 229, 0.2) 0%,
+    rgba(79, 70, 229, 0.15) 0%,
     transparent 70%
   );
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   pointer-events: none;
-  animation: blobFloat 7s ease-in-out infinite;
 }
 
 .CTAEyebrow {
@@ -1226,6 +1676,7 @@
   font-weight: 900;
   letter-spacing: -0.03em;
   margin-bottom: 1rem;
+  color: #fff;
 }
 
 .LandingCTAInner p {
